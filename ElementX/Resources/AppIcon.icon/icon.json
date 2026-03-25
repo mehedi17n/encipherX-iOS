@@ -1,12 +1,38 @@
 {
-  "fill" : "automatic",
+  "fill" : {
+    "linear-gradient" : [
+      "display-p3:0.90000,0.90000,0.90000,1.00000",
+      "display-p3:0.72217,0.83105,0.77832,1.00000"
+    ],
+    "orientation" : {
+      "start" : {
+        "x" : 0.5,
+        "y" : 1
+      },
+      "stop" : {
+        "x" : 0.5,
+        "y" : 0.3
+      }
+    }
+  },
   "groups" : [
     {
       "layers" : [
         {
+          "blend-mode" : "normal",
+          "fill" : "none",
           "glass" : false,
-          "image-name" : "AppIcon.png",
-          "name" : "AppIcon"
+          "hidden" : false,
+          "image-name" : "image 81.png",
+          "name" : "image 81",
+          "opacity" : 1,
+          "position" : {
+            "scale" : 1.6,
+            "translation-in-points" : [
+              0,
+              0
+            ]
+          }
         }
       ],
       "name" : "Background",
