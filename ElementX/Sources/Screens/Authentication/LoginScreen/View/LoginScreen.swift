@@ -9,39 +9,63 @@
 import Compound
 import SwiftUI
 
+private extension Color {
+    static let encipherGreen = Color(red: 0.039, green: 0.529, blue: 0.255)
+}
+
 struct LoginScreen: View {
     /// The focus state of the username text field.
     @FocusState private var isUsernameFocused: Bool
     /// The focus state of the password text field.
     @FocusState private var isPasswordFocused: Bool
-    
+
     @Bindable var context: LoginScreenViewModel.Context
-    
+
     var body: some View {
-        ScrollView {
+        GeometryReader { geometry in
             VStack(spacing: 0) {
-                header
-                    .padding(.top, UIConstants.titleTopPaddingToNavigationBar)
-                    .padding(.bottom, 32)
-                
-                switch context.viewState.loginMode {
-                case .password:
-                    loginForm
-                case .oidc:
-                    // This should never be shown.
-                    ProgressView()
-                default:
-                    // This should never be shown either.
-                    loginUnavailableText
+                ScrollView {
+                    VStack(spacing: 0) {
+                        header
+                            .padding(.top, UIConstants.titleTopPaddingToNavigationBar)
+                            .padding(.bottom, 32)
+
+                        switch context.viewState.loginMode {
+                        case .password:
+                            loginForm
+                        case .oidc:
+                            ProgressView()
+                        default:
+                            loginUnavailableText
+                        }
+                    }
+                    .readableFrame()
+                    .padding(.horizontal, 16)
+                    .padding(.bottom, 16)
                 }
+
+                Spacer()
+
+                submitButton
+                    .padding(.horizontal, 24)
+                    .padding(.bottom, geometry.safeAreaInsets.bottom > 0 ? 0 : 16)
+                    .padding(.top, 8)
             }
-            .readableFrame()
-            .padding(.horizontal, 16)
-            .padding(.bottom, 16)
         }
-        .background(Color.compound.bgCanvasDefault.ignoresSafeArea())
+        .background {
+            AuthenticationStartScreenBackgroundImage()
+        }
         .navigationBarTitleDisplayMode(.inline)
         .alert(item: $context.alertInfo)
+    }
+
+    var submitButton: some View {
+        Button(action: submit) {
+            Text(L10n.actionContinue)
+        }
+        .buttonStyle(EncipherLoginButtonStyle())
+        .disabled(!context.viewState.canSubmit)
+        .accessibilityIdentifier(A11yIdentifiers.loginScreen.continue)
     }
     
     /// The header containing the title and icon.
@@ -91,14 +115,6 @@ struct LoginScreen: View {
             .submitLabel(.done)
             .onSubmit(submit)
             
-            Spacer().frame(height: 32)
-
-            Button(action: submit) {
-                Text(L10n.actionContinue)
-            }
-            .buttonStyle(.compound(.primary))
-            .disabled(!context.viewState.canSubmit)
-            .accessibilityIdentifier(A11yIdentifiers.loginScreen.continue)
         }
     }
     
@@ -124,6 +140,19 @@ struct LoginScreen: View {
         context.send(viewAction: .next)
         isUsernameFocused = false
         isPasswordFocused = false
+    }
+}
+
+// MARK: - Button Style
+
+private struct EncipherLoginButtonStyle: ButtonStyle {
+    func makeBody(configuration: Configuration) -> some View {
+        configuration.label
+            .frame(maxWidth: .infinity)
+            .padding(16)
+            .foregroundColor(.white)
+            .background(Color.encipherGreen.opacity(configuration.isPressed ? 0.9 : 1.0))
+            .cornerRadius(32)
     }
 }
 
