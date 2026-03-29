@@ -15,10 +15,10 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "C0FAEB81CFD9776CD78CE489"
-               BuildableName = "ElementX.app"
-               BlueprintName = "ElementX"
-               ReferencedContainer = "container:ElementX.xcodeproj">
+               BlueprintIdentifier = "906E14501244DAC3272B9A3E"
+               BuildableName = "UnitTests.xctest"
+               BlueprintName = "UnitTests"
+               ReferencedContainer = "container:EncipherX.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -39,10 +39,10 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "C0FAEB81CFD9776CD78CE489"
-            BuildableName = "ElementX.app"
-            BlueprintName = "ElementX"
-            ReferencedContainer = "container:ElementX.xcodeproj">
+            BlueprintIdentifier = "906E14501244DAC3272B9A3E"
+            BuildableName = "UnitTests.xctest"
+            BlueprintName = "UnitTests"
+            ReferencedContainer = "container:EncipherX.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
       <Testables>
@@ -52,10 +52,10 @@
       <CodeCoverageTargets>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "C0FAEB81CFD9776CD78CE489"
-            BuildableName = "ElementX.app"
-            BlueprintName = "ElementX"
-            ReferencedContainer = "container:ElementX.xcodeproj">
+            BlueprintIdentifier = "3583C19D0C001839AC0FC9D1"
+            BuildableName = "EncipherX.app"
+            BlueprintName = "EncipherX"
+            ReferencedContainer = "container:EncipherX.xcodeproj">
          </BuildableReference>
       </CodeCoverageTargets>
    </TestAction>
@@ -69,35 +69,17 @@
       debugDocumentVersioning = "YES"
       debugServiceExtension = "internal"
       allowLocationSimulation = "YES">
-      <BuildableProductRunnable
-         runnableDebuggingMode = "0">
+      <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "C0FAEB81CFD9776CD78CE489"
-            BuildableName = "ElementX.app"
-            BlueprintName = "ElementX"
-            ReferencedContainer = "container:ElementX.xcodeproj">
+            BlueprintIdentifier = "906E14501244DAC3272B9A3E"
+            BuildableName = "UnitTests.xctest"
+            BlueprintName = "UnitTests"
+            ReferencedContainer = "container:EncipherX.xcodeproj">
          </BuildableReference>
-      </BuildableProductRunnable>
+      </MacroExpansion>
       <CommandLineArguments>
       </CommandLineArguments>
-      <EnvironmentVariables>
-         <EnvironmentVariable
-            key = "HTTPS_PROXY"
-            value = "localhost:9090"
-            isEnabled = "NO">
-         </EnvironmentVariable>
-         <EnvironmentVariable
-            key = "UI_TESTS_SCREEN"
-            value = ""
-            isEnabled = "NO">
-         </EnvironmentVariable>
-         <EnvironmentVariable
-            key = "RESET_APP_SETTINGS"
-            value = "true"
-            isEnabled = "NO">
-         </EnvironmentVariable>
-      </EnvironmentVariables>
    </LaunchAction>
    <ProfileAction
       buildConfiguration = "Release"
@@ -105,18 +87,17 @@
       savedToolIdentifier = ""
       useCustomWorkingDirectory = "NO"
       debugDocumentVersioning = "YES">
-      <BuildableProductRunnable
-         runnableDebuggingMode = "0">
-         <BuildableReference
-            BuildableIdentifier = "primary"
-            BlueprintIdentifier = "C0FAEB81CFD9776CD78CE489"
-            BuildableName = "ElementX.app"
-            BlueprintName = "ElementX"
-            ReferencedContainer = "container:ElementX.xcodeproj">
-         </BuildableReference>
-      </BuildableProductRunnable>
       <CommandLineArguments>
       </CommandLineArguments>
+      <MacroExpansion>
+         <BuildableReference
+            BuildableIdentifier = "primary"
+            BlueprintIdentifier = "906E14501244DAC3272B9A3E"
+            BuildableName = "UnitTests.xctest"
+            BlueprintName = "UnitTests"
+            ReferencedContainer = "container:EncipherX.xcodeproj">
+         </BuildableReference>
+      </MacroExpansion>
    </ProfileAction>
    <AnalyzeAction
       buildConfiguration = "Debug">

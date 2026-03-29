@@ -15,10 +15,10 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "32C23C8D224D46EFE62AFAD0"
-               BuildableName = "UnitTests.xctest"
-               BlueprintName = "UnitTests"
-               ReferencedContainer = "container:ElementX.xcodeproj">
+               BlueprintIdentifier = "2D80A746320BD305BA0E59AE"
+               BuildableName = "IntegrationTests.xctest"
+               BlueprintName = "IntegrationTests"
+               ReferencedContainer = "container:EncipherX.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -33,16 +33,16 @@
       <TestPlans>
          <TestPlanReference
             default = "YES"
-            reference = "container:UnitTests/SupportingFiles/UnitTests.xctestplan">
+            reference = "container:IntegrationTests/SupportingFiles/IntegrationTests.xctestplan">
          </TestPlanReference>
       </TestPlans>
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "32C23C8D224D46EFE62AFAD0"
-            BuildableName = "UnitTests.xctest"
-            BlueprintName = "UnitTests"
-            ReferencedContainer = "container:ElementX.xcodeproj">
+            BlueprintIdentifier = "2D80A746320BD305BA0E59AE"
+            BuildableName = "IntegrationTests.xctest"
+            BlueprintName = "IntegrationTests"
+            ReferencedContainer = "container:EncipherX.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
       <Testables>
@@ -52,10 +52,10 @@
       <CodeCoverageTargets>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "C0FAEB81CFD9776CD78CE489"
-            BuildableName = "ElementX.app"
-            BlueprintName = "ElementX"
-            ReferencedContainer = "container:ElementX.xcodeproj">
+            BlueprintIdentifier = "3583C19D0C001839AC0FC9D1"
+            BuildableName = "EncipherX.app"
+            BlueprintName = "EncipherX"
+            ReferencedContainer = "container:EncipherX.xcodeproj">
          </BuildableReference>
       </CodeCoverageTargets>
    </TestAction>
@@ -72,10 +72,10 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "32C23C8D224D46EFE62AFAD0"
-            BuildableName = "UnitTests.xctest"
-            BlueprintName = "UnitTests"
-            ReferencedContainer = "container:ElementX.xcodeproj">
+            BlueprintIdentifier = "2D80A746320BD305BA0E59AE"
+            BuildableName = "IntegrationTests.xctest"
+            BlueprintName = "IntegrationTests"
+            ReferencedContainer = "container:EncipherX.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
       <CommandLineArguments>
@@ -92,10 +92,10 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "32C23C8D224D46EFE62AFAD0"
-            BuildableName = "UnitTests.xctest"
-            BlueprintName = "UnitTests"
-            ReferencedContainer = "container:ElementX.xcodeproj">
+            BlueprintIdentifier = "2D80A746320BD305BA0E59AE"
+            BuildableName = "IntegrationTests.xctest"
+            BlueprintName = "IntegrationTests"
+            ReferencedContainer = "container:EncipherX.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
    </ProfileAction>

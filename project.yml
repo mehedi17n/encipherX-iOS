@@ -1,5 +1,5 @@
 ---
-name: ElementX
+name: EncipherX
 attributes:
   ORGANIZATIONNAME: Element
   LastUpgradeCheck: "1620"
@@ -16,7 +16,7 @@ options:
     macOS: '14.5'
   groupOrdering:
   - order:
-    - ElementX
+    - EncipherX
     - NSE
     - ShareExtension
     - UnitTests
@@ -28,7 +28,7 @@ options:
     - SDKMocks
     - Secrets
     - Tools
-  - pattern: ElementX
+  - pattern: EncipherX
     order:
     - Sources
     - Resources
@@ -51,7 +51,7 @@ options:
 settings:
   CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED: true
   ENABLE_BITCODE: false
-  APP_NAME: ElementX
+  APP_NAME: EncipherX
   KEYCHAIN_ACCESS_GROUP_IDENTIFIER: "$(DEVELOPMENT_TEAM).$(BASE_BUNDLE_IDENTIFIER)"
   MARKETING_VERSION: 26.03.4
   CURRENT_PROJECT_VERSION: 1

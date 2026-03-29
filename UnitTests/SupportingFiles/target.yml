@@ -19,7 +19,7 @@ schemes:
       disableMainThreadChecker: false
       gatherCoverageData: true
       coverageTargets:
-        - ElementX
+        - EncipherX
       testPlans:
         - path: UnitTests.xctestplan
           defaultPlan: true
@@ -30,7 +30,7 @@ targets:
     platform: iOS
 
     dependencies:
-    - target: ElementX
+    - target: EncipherX
     - package: MatrixRustSDK
     - package: AsyncAlgorithms
     - package: Clocks

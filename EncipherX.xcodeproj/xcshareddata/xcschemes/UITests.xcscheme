@@ -15,10 +15,10 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "C0C687DE1D270F9895FEE186"
-               BuildableName = "AccessibilityTests.xctest"
-               BlueprintName = "AccessibilityTests"
-               ReferencedContainer = "container:ElementX.xcodeproj">
+               BlueprintIdentifier = "907CE5C4A4C398DA0BD9CF0F"
+               BuildableName = "UITests.xctest"
+               BlueprintName = "UITests"
+               ReferencedContainer = "container:EncipherX.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -32,16 +32,16 @@
       <TestPlans>
          <TestPlanReference
             default = "YES"
-            reference = "container:AccessibilityTests/SupportingFiles/AccessibilityTests.xctestplan">
+            reference = "container:UITests/SupportingFiles/UITests.xctestplan">
          </TestPlanReference>
       </TestPlans>
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "C0C687DE1D270F9895FEE186"
-            BuildableName = "AccessibilityTests.xctest"
-            BlueprintName = "AccessibilityTests"
-            ReferencedContainer = "container:ElementX.xcodeproj">
+            BlueprintIdentifier = "907CE5C4A4C398DA0BD9CF0F"
+            BuildableName = "UITests.xctest"
+            BlueprintName = "UITests"
+            ReferencedContainer = "container:EncipherX.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
       <Testables>
@@ -62,10 +62,10 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "C0C687DE1D270F9895FEE186"
-            BuildableName = "AccessibilityTests.xctest"
-            BlueprintName = "AccessibilityTests"
-            ReferencedContainer = "container:ElementX.xcodeproj">
+            BlueprintIdentifier = "907CE5C4A4C398DA0BD9CF0F"
+            BuildableName = "UITests.xctest"
+            BlueprintName = "UITests"
+            ReferencedContainer = "container:EncipherX.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
       <CommandLineArguments>
@@ -82,10 +82,10 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "C0C687DE1D270F9895FEE186"
-            BuildableName = "AccessibilityTests.xctest"
-            BlueprintName = "AccessibilityTests"
-            ReferencedContainer = "container:ElementX.xcodeproj">
+            BlueprintIdentifier = "907CE5C4A4C398DA0BD9CF0F"
+            BuildableName = "UITests.xctest"
+            BlueprintName = "UITests"
+            ReferencedContainer = "container:EncipherX.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
    </ProfileAction>
