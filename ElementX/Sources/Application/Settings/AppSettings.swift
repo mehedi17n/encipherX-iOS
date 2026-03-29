@@ -83,6 +83,8 @@ final class AppSettings {
         // Doug's tweaks 🔧
         case hideUnreadMessagesBadge
         case hideQuietNotificationAlerts
+
+        case preferredLanguageCode
     }
     
     private static var suiteName: String = InfoPlistReader.main.appGroupIdentifier
@@ -169,7 +171,11 @@ final class AppSettings {
     }
     
     // MARK: - Application
-    
+
+    /// The user's preferred language code for the onboarding screen (e.g. "en", "id").
+    @UserPreference(key: UserDefaultsKeys.preferredLanguageCode, storageType: .userDefaults(store))
+    var preferredLanguageCode: String?
+
     /// The last known version of the app that was launched on this device, which is
     /// used to detect when migrations should be run. When `nil` the app may have been
     /// deleted between runs so should clear data in the shared container and keychain.

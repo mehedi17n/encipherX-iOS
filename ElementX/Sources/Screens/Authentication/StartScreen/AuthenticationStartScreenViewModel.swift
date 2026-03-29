@@ -16,14 +16,20 @@ class AuthenticationStartScreenViewModel: AuthenticationStartScreenViewModelType
     private let provisioningParameters: AccountProvisioningParameters?
     private let appSettings: AppSettings
     private let userIndicatorController: UserIndicatorControllerProtocol
-    
+
     private let canReportProblem: Bool
-    
+
     private var actionsSubject: PassthroughSubject<AuthenticationStartScreenViewModelAction, Never> = .init()
-    
+
     var actions: AnyPublisher<AuthenticationStartScreenViewModelAction, Never> {
         actionsSubject.eraseToAnyPublisher()
     }
+
+    private static let supportedLanguageOptions: [AuthenticationLanguageOption] = [
+        .init(id: "en", title: "English", shortTitle: "EN"),
+        .init(id: "id", title: "Bahasa Indonesia", shortTitle: "ID")
+    ]
+    private static let supportedLanguageCodes = Set(supportedLanguageOptions.map(\.id))
 
     init(authenticationService: AuthenticationServiceProtocol,
          provisioningParameters: AccountProvisioningParameters?,
@@ -35,31 +41,40 @@ class AuthenticationStartScreenViewModel: AuthenticationStartScreenViewModelType
         self.appSettings = appSettings
         self.userIndicatorController = userIndicatorController
         canReportProblem = isBugReportServiceEnabled
-        
+
         let isQRCodeScanningSupported = !ProcessInfo.processInfo.isiOSAppOnMac
-        
+        let initialLanguage = Self.initialLanguage(preferredCode: appSettings.preferredLanguageCode)
+
         let initialViewState = if !appSettings.allowOtherAccountProviders {
             // We don't show the create account button when custom providers are disallowed.
             // The assumption here being that if you're running a custom app, your users will already be created.
             AuthenticationStartScreenViewState(serverName: appSettings.accountProviders.count == 1 ? appSettings.accountProviders[0] : nil,
                                                showCreateAccountButton: false,
                                                showQRCodeLoginButton: isQRCodeScanningSupported,
-                                               hideBrandChrome: appSettings.hideBrandChrome)
+                                               hideBrandChrome: appSettings.hideBrandChrome,
+                                               availableLanguages: Self.supportedLanguageOptions,
+                                               selectedLanguageCode: initialLanguage)
         } else if let provisioningParameters {
             // We only show the "Sign in to …" button when using a provisioning link.
             AuthenticationStartScreenViewState(serverName: provisioningParameters.accountProvider,
                                                showCreateAccountButton: false,
                                                showQRCodeLoginButton: false,
-                                               hideBrandChrome: appSettings.hideBrandChrome)
+                                               hideBrandChrome: appSettings.hideBrandChrome,
+                                               availableLanguages: Self.supportedLanguageOptions,
+                                               selectedLanguageCode: initialLanguage)
         } else {
             // The default configuration.
             AuthenticationStartScreenViewState(serverName: nil,
                                                showCreateAccountButton: appSettings.showCreateAccountButton,
                                                showQRCodeLoginButton: isQRCodeScanningSupported,
-                                               hideBrandChrome: appSettings.hideBrandChrome)
+                                               hideBrandChrome: appSettings.hideBrandChrome,
+                                               availableLanguages: Self.supportedLanguageOptions,
+                                               selectedLanguageCode: initialLanguage)
         }
-        
+
         super.init(initialViewState: initialViewState)
+
+        applyLanguageSelection(initialLanguage, persistSelection: appSettings.preferredLanguageCode != nil)
     }
 
     override func process(viewAction: AuthenticationStartScreenViewAction) {
@@ -77,7 +92,42 @@ class AuthenticationStartScreenViewModel: AuthenticationStartScreenViewModelType
             if canReportProblem {
                 actionsSubject.send(.reportProblem)
             }
+        case .selectLanguage(let code):
+            applyLanguageSelection(code)
         }
+    }
+
+    // MARK: - Language
+
+    private func applyLanguageSelection(_ code: String, persistSelection: Bool = true) {
+        guard Self.supportedLanguageCodes.contains(code) else { return }
+        if state.selectedLanguageCode != code {
+            state.selectedLanguageCode = code
+        }
+        Bundle.overrideLocalizations = [code]
+        if persistSelection {
+            appSettings.preferredLanguageCode = code
+        }
+    }
+
+    private static func initialLanguage(preferredCode: String?) -> String {
+        if let preferredCode, supportedLanguageCodes.contains(preferredCode.lowercased()) {
+            return preferredCode.lowercased()
+        }
+        for localeIdentifier in Locale.preferredLanguages {
+            let normalized = normalizedLanguageCode(from: localeIdentifier)
+            if supportedLanguageCodes.contains(normalized) {
+                return normalized
+            }
+        }
+        return "en"
+    }
+
+    private static func normalizedLanguageCode(from identifier: String) -> String {
+        identifier
+            .split(whereSeparator: { $0 == "-" || $0 == "_" })
+            .first
+            .map { String($0).lowercased() } ?? identifier.lowercased()
     }
     
     // MARK: - Private

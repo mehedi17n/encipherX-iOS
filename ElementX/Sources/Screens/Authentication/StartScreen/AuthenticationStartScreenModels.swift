@@ -15,7 +15,7 @@ enum AuthenticationStartScreenCoordinatorAction {
     case login
     case register
     case reportProblem
-    
+
     case loginDirectlyWithOIDC(data: OIDCAuthorizationDataProxy, window: UIWindow)
     case loginDirectlyWithPassword(loginHint: String?)
 }
@@ -25,23 +25,40 @@ enum AuthenticationStartScreenViewModelAction: Equatable {
     case login
     case register
     case reportProblem
-    
+
     case loginDirectlyWithOIDC(data: OIDCAuthorizationDataProxy, window: UIWindow)
     case loginDirectlyWithPassword(loginHint: String?)
+}
+
+struct AuthenticationLanguageOption: Identifiable, Equatable {
+    let id: String
+    let title: String
+    let shortTitle: String
 }
 
 struct AuthenticationStartScreenViewState: BindableState {
     /// The presentation anchor used for OIDC authentication.
     var window: UIWindow?
-    
+
     let serverName: String?
     let showCreateAccountButton: Bool
     let showQRCodeLoginButton: Bool
-    
+
     let hideBrandChrome: Bool
-    
+
+    let availableLanguages: [AuthenticationLanguageOption]
+    var selectedLanguageCode: String
+
+    var shouldShowLanguagePicker: Bool {
+        availableLanguages.count > 1
+    }
+
+    var selectedLanguageTitle: String? {
+        availableLanguages.first(where: { $0.id == selectedLanguageCode })?.title
+    }
+
     var bindings = AuthenticationStartScreenViewStateBindings()
-    
+
     var loginButtonTitle: String {
         if let serverName {
             L10n.screenOnboardingSignInTo(serverName)
@@ -64,9 +81,10 @@ enum AuthenticationStartScreenAlertType {
 enum AuthenticationStartScreenViewAction {
     /// Updates the window used as the OIDC presentation anchor.
     case updateWindow(UIWindow)
-    
+
     case loginWithQR
     case login
     case register
     case reportProblem
+    case selectLanguage(code: String)
 }
