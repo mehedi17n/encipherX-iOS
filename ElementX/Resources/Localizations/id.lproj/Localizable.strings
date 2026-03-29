@@ -1013,7 +1013,7 @@
 "screen_notification_settings_system_notifications_turned_off" = "Pemberitahuan sistem dimatikan";
 "screen_notification_settings_title" = "Notifikasi";
 "screen_onboarding_app_version" = "Versi %1$@";
-"screen_onboarding_sign_in_manually" = "Masuk secara manual";
+"screen_onboarding_sign_in_manually" = "Masuk";
 "screen_onboarding_sign_in_with_qr_code" = "Masuk dengan kode QR";
 "screen_onboarding_sign_up" = "Buat akun";
 "screen_onboarding_welcome_message" = "Selamat datang di %1$@ tercepat yang pernah ada. Berdaya besar untuk kecepatan dan kesederhanaan.";
