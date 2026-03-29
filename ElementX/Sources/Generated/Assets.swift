@@ -47,6 +47,7 @@ internal enum Asset {
   internal static let slide1 = ImageAsset(name: "slide-1")
   internal static let slide2 = ImageAsset(name: "slide-2")
   internal static let slide3 = ImageAsset(name: "slide-3")
+  internal static let slide4 = ImageAsset(name: "slide-4")
 }
 // swiftlint:enable identifier_name line_length nesting type_body_length type_name
 

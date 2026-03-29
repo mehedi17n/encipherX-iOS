@@ -117,7 +117,10 @@ struct AuthenticationStartScreen: View {
                                     subtitle: "Enkripsi End-to-end untuk menjaga percakapan Anda tetap aman."),
                 OnboardingSlideItem(imageAssetName: "slide-3",
                                     title: "Panggilan super jernih",
-                                    subtitle: "Komunikasi Suara dan video berkualitas tinggi untuk tim Anda.")
+                                    subtitle: "Komunikasi Suara dan video berkualitas tinggi untuk tim Anda."),
+                OnboardingSlideItem(imageAssetName: "slide-4",
+                                    title: "Dibangun untuk kecepatan",
+                                    subtitle: "Cepat, andal, dan mudah digunakan setiap hari.")
             ]
         default: // "en"
             return [
@@ -129,7 +132,10 @@ struct AuthenticationStartScreen: View {
                                     subtitle: "End‑to‑end encryption keeps your conversations safe."),
                 OnboardingSlideItem(imageAssetName: "slide-3",
                                     title: "Crystal‑clear calls",
-                                    subtitle: "High‑quality voice and video for your teams.")
+                                    subtitle: "High‑quality voice and video for your teams."),
+                OnboardingSlideItem(imageAssetName: "slide-4",
+                                    title: "Built for speed",
+                                    subtitle: "Fast, reliable, and simple to use every day.")
             ]
         }
     }
@@ -281,9 +287,9 @@ private struct OnboardingCarouselView: View {
     let cornerRadius: CGFloat
 
     @State private var currentIndex = 0
-    @State private var isAutoScrolling = true
+    @State private var timerTask: Task<Void, Never>?
 
-    init(items: [OnboardingSlideItem], autoScrollInterval: TimeInterval = 3.0, cornerRadius: CGFloat = 24) {
+    init(items: [OnboardingSlideItem], autoScrollInterval: TimeInterval = 5.0, cornerRadius: CGFloat = 24) {
         self.items = items
         self.autoScrollInterval = autoScrollInterval
         self.cornerRadius = cornerRadius
@@ -335,23 +341,31 @@ private struct OnboardingCarouselView: View {
     }
 
     private func startTimer() {
-        isAutoScrolling = true
-        DispatchQueue.main.asyncAfter(deadline: .now() + autoScrollInterval) {
-            guard isAutoScrolling else { return }
-            withAnimation(.easeInOut) {
-                currentIndex = (currentIndex + 1) % items.count
+        timerTask?.cancel()
+        timerTask = Task {
+            while !Task.isCancelled {
+                try? await Task.sleep(nanoseconds: UInt64(autoScrollInterval * 1_000_000_000))
+                guard !Task.isCancelled else { break }
+                await MainActor.run {
+                    withAnimation(.easeInOut) {
+                        currentIndex = (currentIndex + 1) % items.count
+                    }
+                }
             }
-            startTimer()
         }
     }
 
     private func stopTimer() {
-        isAutoScrolling = false
+        timerTask?.cancel()
+        timerTask = nil
     }
 
     private func toggleAutoScroll() {
-        isAutoScrolling.toggle()
-        if isAutoScrolling { startTimer() }
+        if timerTask != nil {
+            stopTimer()
+        } else {
+            startTimer()
+        }
     }
 }
 
