@@ -164,15 +164,15 @@ struct AuthenticationStartScreen: View {
 //                .buttonStyle(.compound(.tertiary))
 //            }
 
-            versionText
-                .font(.compound.bodySM)
-                .foregroundColor(.compound.textSecondary)
-                .frame(maxWidth: .infinity)
-                .padding(.top, 16)
-                .onTapGesture(count: 7) {
-                    context.send(viewAction: .reportProblem)
-                }
-                .accessibilityIdentifier(A11yIdentifiers.authenticationStartScreen.appVersion)
+//            versionText
+//                .font(.compound.bodySM)
+//                .foregroundColor(.compound.textSecondary)
+//                .frame(maxWidth: .infinity)
+//                .padding(.top, 16)
+//                .onTapGesture(count: 7) {
+//                    context.send(viewAction: .reportProblem)
+//                }
+//                .accessibilityIdentifier(A11yIdentifiers.authenticationStartScreen.appVersion)
         }
         .padding(.horizontal, verticalSizeClass == .compact ? 128 : 24)
         .readableFrame()
