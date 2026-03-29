@@ -23,6 +23,8 @@ struct AuthenticationStartScreen: View {
 
     @Bindable var context: AuthenticationStartScreenViewModel.Context
     @State private var isLanguagePickerExpanded = false
+    @State private var carouselIndex = 0
+    @State private var carouselItemCount = 0
 
     var body: some View {
         GeometryReader { geometry in
@@ -48,6 +50,18 @@ struct AuthenticationStartScreen: View {
                     .padding(.leading, 16)
                     .accessibilityLabel(context.viewState.selectedLanguageTitle ?? "Language")
                 }
+
+                HStack(spacing: 6) {
+                    ForEach(0..<carouselItemCount, id: \.self) { index in
+                        RoundedRectangle(cornerRadius: 2)
+                            .fill(index == carouselIndex ? Color.encipherGreen : Color.encipherGreen.opacity(0.25))
+                            .frame(width: index == carouselIndex ? 28 : 18, height: 3)
+                            .animation(.easeInOut(duration: 0.3), value: carouselIndex)
+                    }
+                }
+                .frame(maxWidth: .infinity, alignment: .trailing)
+                .padding(.trailing, 16)
+                .padding(.top, 22)
             }
             .frame(maxWidth: .infinity, maxHeight: .infinity)
         }
@@ -91,8 +105,9 @@ struct AuthenticationStartScreen: View {
 
             if verticalSizeClass == .regular {
                 Spacer()
-                OnboardingCarouselView(items: slides)
+                OnboardingCarouselView(items: slides, currentIndex: $carouselIndex)
                     .padding(.horizontal, 16)
+                    .onAppear { carouselItemCount = slides.count }
             }
 
             Spacer()
@@ -286,11 +301,12 @@ private struct OnboardingCarouselView: View {
     let autoScrollInterval: TimeInterval
     let cornerRadius: CGFloat
 
-    @State private var currentIndex = 0
+    @Binding var currentIndex: Int
     @State private var timerTask: Task<Void, Never>?
 
-    init(items: [OnboardingSlideItem], autoScrollInterval: TimeInterval = 5.0, cornerRadius: CGFloat = 24) {
+    init(items: [OnboardingSlideItem], currentIndex: Binding<Int>, autoScrollInterval: TimeInterval = 5.0, cornerRadius: CGFloat = 24) {
         self.items = items
+        self._currentIndex = currentIndex
         self.autoScrollInterval = autoScrollInterval
         self.cornerRadius = cornerRadius
     }
@@ -313,16 +329,6 @@ private struct OnboardingCarouselView: View {
             .frame(maxWidth: .infinity)
             .frame(height: 260)
 
-            HStack(spacing: 6) {
-                ForEach(items.indices, id: \.self) { index in
-                    Capsule()
-                        .fill(index == currentIndex ? Color.encipherGreen : Color.compound.bgSubtleSecondary)
-                        .frame(width: index == currentIndex ? 14 : 6, height: 6)
-                        .animation(.easeInOut(duration: 0.2), value: currentIndex)
-                }
-            }
-            .padding(.top, 16)
-
             VStack(spacing: 16) {
                 Text(items[currentIndex].title)
                     .font(.compound.headingMDBold)
@@ -334,7 +340,7 @@ private struct OnboardingCarouselView: View {
                     .foregroundColor(.compound.textSecondary)
             }
             .padding(.horizontal, 16)
-            .padding(.top, 24)
+            .padding(.top, 8)
         }
         .onAppear { startTimer() }
         .onDisappear { stopTimer() }
