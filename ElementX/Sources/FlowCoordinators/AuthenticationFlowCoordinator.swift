@@ -213,7 +213,7 @@ class AuthenticationFlowCoordinator: FlowCoordinatorProtocol {
             }
             self?.showOIDCAuthentication(oidcData: oidcData, presentationAnchor: window, fromState: context.fromState)
         }
-        stateMachine.addRoutes(event: .cancelledOIDCAuthentication(previousState: .serverConfirmationScreen), transitions: [.oidcAuthentication => .serverConfirmationScreen])
+        stateMachine.addRoutes(event: .cancelledOIDCAuthentication(previousState: .serverConfirmationScreen), transitions: [.oidcAuthentication => .startScreen])
         stateMachine.addRoutes(event: .cancelledOIDCAuthentication(previousState: .startScreen), transitions: [.oidcAuthentication => .startScreen])
         
         stateMachine.addRoutes(event: .continueWithPassword, transitions: [.serverConfirmationScreen => .loginScreen,
@@ -221,7 +221,7 @@ class AuthenticationFlowCoordinator: FlowCoordinatorProtocol {
             let loginHint = context.userInfo as? String
             self?.showLoginScreen(loginHint: loginHint, fromState: context.fromState)
         }
-        stateMachine.addRoutes(event: .cancelledPasswordLogin(previousState: .serverConfirmationScreen), transitions: [.loginScreen => .serverConfirmationScreen])
+        stateMachine.addRoutes(event: .cancelledPasswordLogin(previousState: .serverConfirmationScreen), transitions: [.loginScreen => .startScreen])
         stateMachine.addRoutes(event: .cancelledPasswordLogin(previousState: .startScreen), transitions: [.loginScreen => .startScreen])
         
         // Bug Report
@@ -340,29 +340,40 @@ class AuthenticationFlowCoordinator: FlowCoordinatorProtocol {
         // Reset the service back to the default homeserver before continuing. This ensures
         // we check that registration is supported if it was previously configured for login.
         authenticationService.reset()
-        
-        let parameters = ServerConfirmationScreenCoordinatorParameters(authenticationService: authenticationService,
-                                                                       authenticationFlow: authenticationFlow,
-                                                                       appSettings: appSettings,
-                                                                       userIndicatorController: userIndicatorController)
-        let coordinator = ServerConfirmationScreenCoordinator(parameters: parameters)
-        
-        coordinator.actions.sink { [weak self] action in
+
+        let loadingIndicatorID = "\(AuthenticationFlowCoordinator.self)-Loading"
+        userIndicatorController.submitIndicator(UserIndicator(id: loadingIndicatorID,
+                                                              type: .modal,
+                                                              title: L10n.commonLoading,
+                                                              persistent: true))
+
+        Task { [weak self] in
             guard let self else { return }
-            
-            switch action {
-            case .continueWithOIDC(let oidcData, let window):
-                stateMachine.tryEvent(.continueWithOIDC, userInfo: (oidcData, window))
-            case .continueWithPassword:
-                stateMachine.tryEvent(.continueWithPassword)
-            case .changeServer:
-                stateMachine.tryEvent(.changeServer(authenticationFlow))
+            defer { userIndicatorController.retractIndicatorWithId(loadingIndicatorID) }
+
+            let homeserver = authenticationService.homeserver.value
+
+            if homeserver.loginMode == .unknown || authenticationService.flow != authenticationFlow {
+                switch await authenticationService.configure(for: homeserver.address, flow: authenticationFlow) {
+                case .success:
+                    break
+                case .failure:
+                    stateMachine.tryEvent(.cancelledServerConfirmation)
+                    return
+                }
             }
-        }
-        .store(in: &cancellables)
-        
-        navigationStackCoordinator.push(coordinator) { [weak self] in
-            self?.stateMachine.tryEvent(.cancelledServerConfirmation)
+
+            if authenticationService.homeserver.value.loginMode.supportsOIDCFlow {
+                let window = appMediator.windowManager.mainWindow!
+                switch await authenticationService.urlForOIDCLogin(loginHint: nil) {
+                case .success(let oidcData):
+                    stateMachine.tryEvent(.continueWithOIDC, userInfo: (oidcData, window))
+                case .failure:
+                    stateMachine.tryEvent(.cancelledServerConfirmation)
+                }
+            } else {
+                stateMachine.tryEvent(.continueWithPassword)
+            }
         }
     }
     
