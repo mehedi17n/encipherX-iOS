@@ -1,17 +1,17 @@
 {
   "fill" : {
     "linear-gradient" : [
-      "display-p3:0.90000,0.90000,0.90000,1.00000",
-      "display-p3:0.72217,0.83105,0.77832,1.00000"
+      "extended-gray:0.00000,1.00000",
+      "display-p3:0.00747,0.10141,0.04970,1.00000"
     ],
     "orientation" : {
       "start" : {
         "x" : 0.5,
-        "y" : 1
+        "y" : 0
       },
       "stop" : {
         "x" : 0.5,
-        "y" : 0.3
+        "y" : 0.7
       }
     }
   },
@@ -21,13 +21,13 @@
         {
           "blend-mode" : "normal",
           "fill" : "none",
-          "glass" : false,
+          "glass" : true,
           "hidden" : false,
-          "image-name" : "image 81.png",
-          "name" : "image 81",
+          "image-name" : "morflax-studio-2026-03-29 15.32.53 1.png",
+          "name" : "morflax-studio-2026-03-29 15.32.53 1",
           "opacity" : 1,
           "position" : {
-            "scale" : 1.6,
+            "scale" : 0.25,
             "translation-in-points" : [
               0,
               0
