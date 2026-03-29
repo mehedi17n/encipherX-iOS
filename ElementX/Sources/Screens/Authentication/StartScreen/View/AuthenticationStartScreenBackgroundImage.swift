@@ -11,10 +11,24 @@ import SwiftUI
 /// The background gradient shown on the launch, splash and onboarding screens.
 struct AuthenticationStartScreenBackgroundImage: View {
     var body: some View {
-        Image(asset: ImageAsset(name: "auth-background-grad"))
-            .resizable()
-            .scaledToFill()
-            .ignoresSafeArea()
-            .accessibilityHidden(true)
+        ZStack {
+            Color.white
+
+            Image(asset: ImageAsset(name: "auth-background-grad"))
+                .resizable()
+                .scaledToFill()
+                .opacity(0.22)
+
+            LinearGradient(
+                gradient: Gradient(colors: [
+                    Color.white.opacity(0.0),
+                    Color.white.opacity(0.55)
+                ]),
+                startPoint: .top,
+                endPoint: .bottom
+            )
+        }
+        .ignoresSafeArea()
+        .accessibilityHidden(true)
     }
 }
