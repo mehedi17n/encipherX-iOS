@@ -375,7 +375,7 @@ final class AppSettings {
     
     #if IS_MAIN_APP
     // swiftlint:disable:next force_unwrapping
-    let elementCallBaseURL: URL = EmbeddedElementCall.appURL!
+    let elementCallBaseURL: URL = URL(string: "https://call.dev.enciph-er.com/room")!
     #endif
     
     // These are publicly availble on https://call.element.io so we don't neeed to treat them as secrets

@@ -176,6 +176,8 @@ class CallScreenViewModel: CallScreenViewModelType, CallScreenViewModelProtocol 
                 } else {
                     elementCallBaseURL
                 }
+
+                MXLog.info("[CallURL] using baseURL: \(baseURL) | override: \(elementCallBaseURLOverride?.absoluteString ?? "nil")")
                 
                 // We only set the analytics configuration if analytics are enabled
                 let analyticsConfiguration: ElementCallAnalyticsConfiguration? = if analyticsService.isEnabled {

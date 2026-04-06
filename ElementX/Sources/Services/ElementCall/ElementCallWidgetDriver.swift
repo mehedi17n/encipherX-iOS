@@ -102,6 +102,8 @@ final class ElementCallWidgetDriver: WidgetCapabilitiesProvider, ElementCallWidg
         let languageTag = "\(Locale.current.language.languageCode ?? "en")-\(Locale.current.language.region ?? "US")"
         let theme = colorScheme == .light ? "light" : "dark"
         
+        MXLog.info("[CallURL] baseURL passed to widget: \(baseURL.absoluteString)")
+
         let urlString: String
         do {
             urlString = try await generateWebviewUrl(widgetSettings: widgetSettings, room: room,
@@ -112,7 +114,9 @@ final class ElementCallWidgetDriver: WidgetCapabilitiesProvider, ElementCallWidg
             MXLog.error("Failed to generate web view URL: \(error)")
             return .failure(.failedBuildingCallURL)
         }
-        
+
+        MXLog.info("[CallURL] generated webview URL: \(urlString)")
+
         guard let url = URL(string: urlString) else {
             return .failure(.failedParsingCallURL)
         }
