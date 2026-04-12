@@ -154,7 +154,7 @@ struct RoomDetailsEditScreen: View {
 struct RoomDetailsEditScreen_Previews: PreviewProvider, TestablePreview {
     static let editableViewModel = {
         let roomProxy = JoinedRoomProxyMock(.init(id: "test_id",
-                                                  name: "Room",
+                                                  name: "Group",
                                                   members: [.mockMeAdmin]))
         
         return RoomDetailsEditScreenViewModel(roomProxy: roomProxy,
@@ -165,7 +165,7 @@ struct RoomDetailsEditScreen_Previews: PreviewProvider, TestablePreview {
     
     static let readOnlyViewModel = {
         let roomProxy = JoinedRoomProxyMock(.init(id: "test_id",
-                                                  name: "Room",
+                                                  name: "Group",
                                                   members: [.mockAlice]))
         
         return RoomDetailsEditScreenViewModel(roomProxy: roomProxy,

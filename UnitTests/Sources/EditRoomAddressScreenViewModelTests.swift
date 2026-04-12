@@ -19,7 +19,7 @@ struct EditRoomAddressScreenViewModelTests {
     
     @Test
     mutating func canonicalAliasChosen() async throws {
-        let roomProxy = JoinedRoomProxyMock(.init(name: "Room Name", canonicalAlias: "#room-name:matrix.org",
+        let roomProxy = JoinedRoomProxyMock(.init(name: "Group Name", canonicalAlias: "#room-name:matrix.org",
                                                   alternativeAliases: ["#beta:homeserver.io",
                                                                        "#alternative-room-name:matrix.org"]))
         
@@ -37,7 +37,7 @@ struct EditRoomAddressScreenViewModelTests {
     /// Priority should be given to aliases from the current user's homeserver as they can edit those.
     @Test
     mutating func alternativeAliasChosen() async throws {
-        let roomProxy = JoinedRoomProxyMock(.init(name: "Room Name", canonicalAlias: "#alpha:homeserver.io",
+        let roomProxy = JoinedRoomProxyMock(.init(name: "Group Name", canonicalAlias: "#alpha:homeserver.io",
                                                   alternativeAliases: ["#beta:homeserver.io",
                                                                        "#room-name:matrix.org",
                                                                        "#alternative-room-name:matrix.org"]))
@@ -55,7 +55,7 @@ struct EditRoomAddressScreenViewModelTests {
     
     @Test
     mutating func buildAliasFromDisplayName() async throws {
-        let roomProxy = JoinedRoomProxyMock(.init(name: "Room Name"))
+        let roomProxy = JoinedRoomProxyMock(.init(name: "Group Name"))
         
         viewModel = EditRoomAddressScreenViewModel(roomProxy: roomProxy,
                                                    clientProxy: ClientProxyMock(.init(userIDServerName: "matrix.org")),
@@ -72,7 +72,7 @@ struct EditRoomAddressScreenViewModelTests {
     mutating func correctMethodsCalledOnSaveWhenNoAliasExists() async {
         let clientProxy = ClientProxyMock(.init(userIDServerName: "matrix.org"))
         clientProxy.isAliasAvailableReturnValue = .success(true)
-        let roomProxy = JoinedRoomProxyMock(.init(name: "Room Name"))
+        let roomProxy = JoinedRoomProxyMock(.init(name: "Group Name"))
         
         viewModel = EditRoomAddressScreenViewModel(roomProxy: roomProxy,
                                                    clientProxy: clientProxy,
@@ -107,7 +107,7 @@ struct EditRoomAddressScreenViewModelTests {
     mutating func correctMethodsCalledOnSaveWhenAliasOnSameHomeserverExists() async {
         let clientProxy = ClientProxyMock(.init(userIDServerName: "matrix.org"))
         clientProxy.isAliasAvailableReturnValue = .success(true)
-        let roomProxy = JoinedRoomProxyMock(.init(name: "Room Name", canonicalAlias: "#old-room-name:matrix.org"))
+        let roomProxy = JoinedRoomProxyMock(.init(name: "Group Name", canonicalAlias: "#old-room-name:matrix.org"))
         
         viewModel = EditRoomAddressScreenViewModel(roomProxy: roomProxy,
                                                    clientProxy: clientProxy,
@@ -147,7 +147,7 @@ struct EditRoomAddressScreenViewModelTests {
     mutating func correctMethodsCalledOnSaveWhenAliasOnOtherHomeserverExists() async {
         let clientProxy = ClientProxyMock(.init(userIDServerName: "matrix.org"))
         clientProxy.isAliasAvailableReturnValue = .success(true)
-        let roomProxy = JoinedRoomProxyMock(.init(name: "Room Name", canonicalAlias: "#old-room-name:element.io"))
+        let roomProxy = JoinedRoomProxyMock(.init(name: "Group Name", canonicalAlias: "#old-room-name:element.io"))
         
         viewModel = EditRoomAddressScreenViewModel(roomProxy: roomProxy,
                                                    clientProxy: clientProxy,

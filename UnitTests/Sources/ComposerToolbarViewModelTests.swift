@@ -130,9 +130,9 @@ final class ComposerToolbarViewModelTests {
     func selectedRoomSuggestion() {
         let suggestion = SuggestionItem(suggestionType: .room(.init(id: "!room:matrix.org",
                                                                     canonicalAlias: "#room-alias:matrix.org",
-                                                                    name: "Room",
+                                                                    name: "Group",
                                                                     avatar: .room(id: "!room:matrix.org",
-                                                                                  name: "Room",
+                                                                                  name: "Group",
                                                                                   avatarURL: nil))),
                                         range: .init(), rawSuggestionText: "")
         viewModel.context.send(viewAction: .selectedSuggestion(suggestion))
@@ -169,7 +169,7 @@ final class ComposerToolbarViewModelTests {
         viewModel.context.send(viewAction: .composerAppeared)
         await Task.yield()
         let roomAlias = "#test:matrix.org"
-        let suggestion = SuggestionItem(suggestionType: .room(.init(id: "room-id", canonicalAlias: roomAlias, name: "Room", avatar: .room(id: "room-id", name: "Room", avatarURL: nil))), range: .init(), rawSuggestionText: "")
+        let suggestion = SuggestionItem(suggestionType: .room(.init(id: "room-id", canonicalAlias: roomAlias, name: "Group", avatar: .room(id: "room-id", name: "Group", avatarURL: nil))), range: .init(), rawSuggestionText: "")
         viewModel.context.send(viewAction: .selectedSuggestion(suggestion))
         
         let attachment = wysiwygViewModel.textView.attributedText.attribute(.attachment, at: 0, effectiveRange: nil) as? PillTextAttachment

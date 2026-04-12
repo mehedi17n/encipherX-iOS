@@ -298,7 +298,7 @@ class HomeScreenViewModel: HomeScreenViewModelType, HomeScreenViewModelProtocol 
     
     private func setupRoomListSubscriptions() {
         guard let roomSummaryProvider else {
-            MXLog.error("Room summary provider unavailable")
+            MXLog.error("Group summary provider unavailable")
             return
         }
         
@@ -354,7 +354,7 @@ class HomeScreenViewModel: HomeScreenViewModelType, HomeScreenViewModelProtocol 
         
     private func updateRooms() {
         guard let roomSummaryProvider else {
-            MXLog.error("Room summary provider unavailable")
+            MXLog.error("Group summary provider unavailable")
             return
         }
         

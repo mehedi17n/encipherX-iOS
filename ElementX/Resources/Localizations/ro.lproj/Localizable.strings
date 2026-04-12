@@ -54,7 +54,7 @@
 "a11y.your_avatar" = "Avatarul dumneavoastră";
 "action_accept" = "Acceptați";
 "action_add_caption" = "Adăugați o descriere";
-"action_add_existing_rooms" = "Add existing rooms";
+"action_add_existing_rooms" = "Add existing groups";
 "action_add_to_timeline" = "Adăugați listei de mesaje";
 "action_back" = "Înapoi";
 "action_call" = "Apel";
@@ -390,8 +390,8 @@
 "crypto_event_authenticity_unknown_device" = "Criptat de un dispozitiv necunoscut sau șters.";
 "crypto_event_authenticity_unsigned_device" = "Criptat de un dispozitiv care nu este verificat de proprietarul său.";
 "crypto_event_authenticity_unverified_identity" = "Criptat de un utilizator neverificat.";
-"crypto_event_key_forwarded_known_profile_dialog_content" = "%1$@ (%2$@) shared this message since you were not in the room when it was sent.";
-"crypto_event_key_forwarded_unknown_profile_dialog_content" = "%1$@ shared this message since you were not in the room when it was sent.";
+"crypto_event_key_forwarded_known_profile_dialog_content" = "%1$@ (%2$@) shared this message since you were not in the group when it was sent.";
+"crypto_event_key_forwarded_unknown_profile_dialog_content" = "%1$@ shared this message since you were not in the group when it was sent.";
 "crypto_history_sharing_room_info_hidden_badge_content" = "New members don't see history";
 "crypto_history_sharing_room_info_shared_badge_content" = "New members see history";
 "crypto_history_sharing_room_info_world_readable_badge_content" = "Anyone can see history";
@@ -565,7 +565,7 @@
 "screen_create_poll_settings_section_title" = "Setări";
 "screen_create_room_error_creating_space" = "The space could not be created because of an unknown error. Try again later.";
 "screen_create_room_name_placeholder" = "Add name…";
-"screen_create_room_new_room_title" = "New room";
+"screen_create_room_new_room_title" = "New group";
 "screen_create_room_new_space_title" = "New space";
 "screen_create_room_public_option_short_description" = "Anyone can join.";
 "screen_create_room_room_access_section_knocking_option_description" = "Oricine poate cere să se alăture camerei, dar un administrator sau un moderator va trebui să accepte cererea";
@@ -758,12 +758,12 @@
 "screen_security_and_privacy_title" = "Securitate & confidențialitate";
 "screen_share_location_live_location_duration_picker_title" = "Choose how long to share your live location.";
 "screen_sharing_location_option_sheet_title" = "Sharing options";
-"screen_space_add_room_action" = "Room";
-"screen_space_empty_state_title" = "Add your first room";
+"screen_space_add_room_action" = "Group";
+"screen_space_empty_state_title" = "Add your first group";
 "screen_space_menu_action_members" = "Vizualizați membrii";
-"screen_space_remove_rooms_confirmation_content" = "Removing a room will not affect the room access. To change the access go to Room info > Privacy & security.";
-"screen_space_remove_rooms_confirmation_title_ios" = "Remove rooms from %1$@?";
-"screen_space_add_rooms_room_access_description" = "Adding a room will not affect the room access. To change the access go to Room settings > Security & privacy.";
+"screen_space_remove_rooms_confirmation_content" = "Removing a group will not affect the group access. To change the access go to Group info > Privacy & security.";
+"screen_space_remove_rooms_confirmation_title_ios" = "Remove groups from %1$@?";
+"screen_space_add_rooms_room_access_description" = "Adding a group will not affect the group access. To change the access go to Group settings > Security & privacy.";
 "screen_space_announcement_item1" = "Vizualizați spațiile pe care le-ați creat sau la care v-ați alăturat";
 "screen_space_announcement_item2" = "Acceptați sau refuzați invitațiile la spații";
 "screen_space_announcement_item3" = "Descoperiți toate camerele la care vă puteți alătura în spațiile dumneavoastră.";
@@ -774,7 +774,7 @@
 "screen_space_announcement_title" = "Vă prezentăm Spații";
 "screen_space_list_description" = "Spații pe care le-ați creat sau la care v-ați alăturat.";
 "screen_space_list_details" = "%1$@ • %2$@";
-"screen_space_list_empty_state_title" = "Create spaces to organize rooms";
+"screen_space_list_empty_state_title" = "Create spaces to organize groups";
 "screen_space_list_parent_space" = "Spațiu %1$@";
 "screen_space_list_title" = "Spații";
 "screen_start_chat_join_room_by_address_action" = "Gasiți o cameră după adresă";
@@ -1007,7 +1007,7 @@
 "screen_notification_settings_mode_all" = "Toate";
 "screen_notification_settings_mode_mentions" = "Mențiuni";
 "screen_notification_settings_notification_section_title" = "Anunță-mă pentru";
-"screen_notification_settings_room_mention_label" = "Anunțați-mă pentru @room";
+"screen_notification_settings_room_mention_label" = "Anunțați-mă pentru @group";
 "screen_notification_settings_system_notifications_action_required" = "Pentru a primi notificări, vă rugăm să vă schimbați %1$@.";
 "screen_notification_settings_system_notifications_action_required_content_link" = "Setări de sistem";
 "screen_notification_settings_system_notifications_turned_off" = "Notificările de sistem sunt dezactivate";

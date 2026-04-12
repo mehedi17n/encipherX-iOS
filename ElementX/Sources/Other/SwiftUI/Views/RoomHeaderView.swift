@@ -132,10 +132,10 @@ struct RoomHeaderView_Previews: PreviewProvider, TestablePreview {
                            roomSubtitle: String? = nil,
                            verificationState: UserIdentityVerificationState,
                            historySharingState: RoomHistorySharingState? = nil) -> some View {
-        RoomHeaderView(roomName: "Some Room name",
+        RoomHeaderView(roomName: "Some Group name",
                        roomSubtitle: roomSubtitle,
                        roomAvatar: .room(id: "1",
-                                         name: "Some Room Name",
+                                         name: "Some Group Name",
                                          avatarURL: avatarURL),
                        dmRecipientVerificationState: verificationState,
                        roomHistorySharingState: historySharingState,

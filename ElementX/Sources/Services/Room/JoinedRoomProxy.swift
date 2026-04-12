@@ -111,7 +111,7 @@ class JoinedRoomProxy: JoinedRoomProxyProtocol {
     
     func subscribeForUpdates() async {
         guard !subscribedForUpdates else {
-            MXLog.warning("Room already subscribed for updates")
+            MXLog.warning("Group already subscribed for updates")
             return
         }
         

@@ -782,7 +782,7 @@
 "screen_start_chat_join_room_by_address_placeholder" = "Zadejte...";
 "screen_start_chat_join_room_by_address_room_found" = "Odpovídající místnost nalezena";
 "screen_start_chat_join_room_by_address_room_not_found" = "Místnost nebyla nalezena";
-"screen_start_chat_join_room_by_address_supporting_text" = "např. #room-name:matrix.org";
+"screen_start_chat_join_room_by_address_supporting_text" = "např. #group-name:matrix.org";
 "screen_static_location_sheet_timestamp_description" = "Sdíleno %1$@";
 "screen_static_location_sheet_title" = "Na mapě";
 "screen_timeline_item_menu_send_failure_changed_identity" = "Zpráva nebyla odeslána, protože ověřená identita uživatele %1$@ se změnila.";
@@ -1007,7 +1007,7 @@
 "screen_notification_settings_mode_all" = "Vše";
 "screen_notification_settings_mode_mentions" = "Zmínky";
 "screen_notification_settings_notification_section_title" = "Upozornit mě na";
-"screen_notification_settings_room_mention_label" = "Upozornit mě na @room";
+"screen_notification_settings_room_mention_label" = "Upozornit mě na @group";
 "screen_notification_settings_system_notifications_action_required" = "Chcete-li dostávat oznámení, změňte prosím svůj %1$@.";
 "screen_notification_settings_system_notifications_action_required_content_link" = "systémová nastavení";
 "screen_notification_settings_system_notifications_turned_off" = "Systémová oznámení byla vypnuta";

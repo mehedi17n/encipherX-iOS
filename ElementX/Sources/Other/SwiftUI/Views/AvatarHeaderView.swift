@@ -246,9 +246,9 @@ struct AvatarHeaderView_Previews: PreviewProvider, TestablePreview {
     static var previews: some View {
         Form {
             AvatarHeaderView(room: .init(id: "@test:matrix.org",
-                                         name: "Test Room",
+                                         name: "Test Group",
                                          avatar: .room(id: "@test:matrix.org",
-                                                       name: "Test Room",
+                                                       name: "Test Group",
                                                        avatarURL: .mockMXCAvatar),
                                          canonicalAlias: "#test:matrix.org",
                                          isEncrypted: true,
@@ -266,7 +266,7 @@ struct AvatarHeaderView_Previews: PreviewProvider, TestablePreview {
                 .padding(.top, 32)
             }
         }
-        .previewDisplayName("Room")
+        .previewDisplayName("Group")
         
         Form {
             AvatarHeaderView(accountOwner: RoomMemberDetails(withProxy: RoomMemberProxyMock.mockMe), dmRecipient: RoomMemberDetails(withProxy: RoomMemberProxyMock.mockAlice),
@@ -309,9 +309,9 @@ struct AvatarHeaderView_Previews: PreviewProvider, TestablePreview {
     private static func makeHistorySharingPreview(state: RoomHistorySharingState) -> some View {
         Form {
             AvatarHeaderView(room: .init(id: "@test:matrix.org",
-                                         name: "Test Room",
+                                         name: "Test Group",
                                          avatar: .room(id: "@test:matrix.org",
-                                                       name: "Test Room",
+                                                       name: "Test Group",
                                                        avatarURL: .mockMXCAvatar),
                                          canonicalAlias: "#test:matrix.org",
                                          isEncrypted: true,

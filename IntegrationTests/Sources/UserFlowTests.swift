@@ -203,7 +203,7 @@ class UserFlowTests: XCTestCase {
         tapOnBackButton("People")
         
         // Go back to the room details
-        tapOnBackButton("Room info")
+        tapOnBackButton("Group info")
         
         // Go back to the room
         tapOnBackButton("Chat")

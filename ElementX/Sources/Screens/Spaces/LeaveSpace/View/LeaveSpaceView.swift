@@ -138,11 +138,11 @@ struct LeaveSpaceView_Previews: PreviewProvider, TestablePreview {
     
     static var previews: some View {
         LeaveSpaceView(context: manyViewModel.context)
-            .previewDisplayName("Many Rooms")
+            .previewDisplayName("Many Groups")
         LeaveSpaceView(context: onlyAdminViewModel.context)
-            .previewDisplayName("Only Admin Rooms")
+            .previewDisplayName("Only Admin Groups")
         LeaveSpaceView(context: noRoomsViewModel.context)
-            .previewDisplayName("No Rooms")
+            .previewDisplayName("No Groups")
         LeaveSpaceView(context: lastAdminViewModel.context)
             .previewDisplayName("Last Space Admin")
         LeaveSpaceView(context: lastOwnerViewModel.context)

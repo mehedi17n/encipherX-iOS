@@ -201,7 +201,7 @@ struct TimelineMediaPreviewDetailsView_Previews: PreviewProvider, TestablePrevie
         
         if case let .media(mediaItem) = presentedOnRoomViewModel.state.currentItem {
             TimelineMediaPreviewDetailsView(item: mediaItem, context: presentedOnRoomViewModel.context, sheetHeight: $sheetHeight)
-                .previewDisplayName("Incoming on Room")
+                .previewDisplayName("Incoming on Group")
                 .snapshotPreferences(expect: mediaItem.observe(\.fileHandle).map { $0 != nil })
         }
     }

@@ -135,25 +135,25 @@ struct RoomAvatarImage_Previews: PreviewProvider, TestablePreview {
         VStack(spacing: 20) {
             HStack(spacing: 12) {
                 RoomAvatarImage(avatar: .room(id: "!1:server.com",
-                                              name: "Room",
+                                              name: "Group",
                                               avatarURL: nil),
                                 avatarSize: .room(on: .chats),
                                 mediaProvider: MediaProviderMock(configuration: .init()))
                 
                 RoomAvatarImage(avatar: .room(id: "!2:server.com",
-                                              name: "Room",
+                                              name: "Group",
                                               avatarURL: .mockMXCAvatar),
                                 avatarSize: .room(on: .chats),
                                 mediaProvider: MediaProviderMock(configuration: .init()))
                 
                 RoomAvatarImage(avatar: .space(id: "!space:server.com",
-                                               name: "Room",
+                                               name: "Group",
                                                avatarURL: nil),
                                 avatarSize: .room(on: .chats),
                                 mediaProvider: MediaProviderMock(configuration: .init()))
                 
                 RoomAvatarImage(avatar: .space(id: "!otherspace:server.com",
-                                               name: "Room",
+                                               name: "Group",
                                                avatarURL: .mockMXCAvatar),
                                 avatarSize: .room(on: .chats),
                                 mediaProvider: MediaProviderMock(configuration: .init()))

@@ -73,12 +73,12 @@ struct RoomChangePermissionsScreen_Previews: PreviewProvider, TestablePreview {
         ElementNavigationStack {
             RoomChangePermissionsScreen(context: roomViewModel.context)
         }
-        .previewDisplayName("Room")
+        .previewDisplayName("Group")
         
         ElementNavigationStack {
             RoomChangePermissionsScreen(context: roomAsUserViewModel.context)
         }
-        .previewDisplayName("Room as User")
+        .previewDisplayName("Group as User")
         
         ElementNavigationStack {
             RoomChangePermissionsScreen(context: spaceViewModel.context)

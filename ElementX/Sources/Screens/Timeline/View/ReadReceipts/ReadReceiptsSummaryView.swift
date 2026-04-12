@@ -43,7 +43,7 @@ struct ReadReceiptsSummaryView_Previews: PreviewProvider, TestablePreview {
             .mockCharlie,
             .mockDan
         ]
-        let roomProxyMock = JoinedRoomProxyMock(.init(name: "Room", members: members))
+        let roomProxyMock = JoinedRoomProxyMock(.init(name: "Group", members: members))
         return TimelineViewModel(roomProxy: roomProxyMock,
                                  timelineController: MockTimelineController(),
                                  userSession: UserSessionMock(.init()),

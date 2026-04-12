@@ -63,15 +63,15 @@ struct EditRoomAddressScreen: View {
 // MARK: - Previews
 
 struct EditRoomAddressScreen_Previews: PreviewProvider, TestablePreview {
-    static let noAliasviewModel = EditRoomAddressScreenViewModel(roomProxy: JoinedRoomProxyMock(.init(name: "Room Name")),
+    static let noAliasviewModel = EditRoomAddressScreenViewModel(roomProxy: JoinedRoomProxyMock(.init(name: "Group Name")),
                                                                  clientProxy: ClientProxyMock(.init(userIDServerName: "matrix.org")),
                                                                  userIndicatorController: UserIndicatorControllerMock())
     
-    static let aliasviewModel = EditRoomAddressScreenViewModel(roomProxy: JoinedRoomProxyMock(.init(name: "Room Name", canonicalAlias: "#room-alias:matrix.org")),
+    static let aliasviewModel = EditRoomAddressScreenViewModel(roomProxy: JoinedRoomProxyMock(.init(name: "Group Name", canonicalAlias: "#room-alias:matrix.org")),
                                                                clientProxy: ClientProxyMock(.init(userIDServerName: "matrix.org")),
                                                                userIndicatorController: UserIndicatorControllerMock())
     
-    static let invalidSymbolsViewModel = EditRoomAddressScreenViewModel(roomProxy: JoinedRoomProxyMock(.init(name: "Room Name", canonicalAlias: "#room#-alias:matrix.org")),
+    static let invalidSymbolsViewModel = EditRoomAddressScreenViewModel(roomProxy: JoinedRoomProxyMock(.init(name: "Group Name", canonicalAlias: "#room#-alias:matrix.org")),
                                                                         clientProxy: ClientProxyMock(.init(userIDServerName: "matrix.org")),
                                                                         userIndicatorController: UserIndicatorControllerMock())
     
@@ -80,7 +80,7 @@ struct EditRoomAddressScreen_Previews: PreviewProvider, TestablePreview {
         clientProxy.isAliasAvailableReturnValue = .success(false)
         return EditRoomAddressScreenViewModel(initialViewState: .init(serverName: "matrix.org",
                                                                       bindings: .init(desiredAliasLocalPart: "whatever")),
-                                              roomProxy: JoinedRoomProxyMock(.init(name: "Room Name")),
+                                              roomProxy: JoinedRoomProxyMock(.init(name: "Group Name")),
                                               clientProxy: clientProxy,
                                               userIndicatorController: UserIndicatorControllerMock())
     }()

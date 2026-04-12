@@ -782,7 +782,7 @@
 "screen_start_chat_join_room_by_address_placeholder" = "输入...";
 "screen_start_chat_join_room_by_address_room_found" = "找到匹配的房间";
 "screen_start_chat_join_room_by_address_room_not_found" = "未找到房间";
-"screen_start_chat_join_room_by_address_supporting_text" = "例如 #room-name:matrix.org";
+"screen_start_chat_join_room_by_address_supporting_text" = "例如 #group-name:matrix.org";
 "screen_static_location_sheet_timestamp_description" = "Shared %1$@";
 "screen_static_location_sheet_title" = "On the map";
 "screen_timeline_item_menu_send_failure_changed_identity" = "消息未发送，因为%1$@的已验证身份已被重置。";
@@ -1007,7 +1007,7 @@
 "screen_notification_settings_mode_all" = "全部";
 "screen_notification_settings_mode_mentions" = "提及";
 "screen_notification_settings_notification_section_title" = "请通知我：";
-"screen_notification_settings_room_mention_label" = "@room 时通知我";
+"screen_notification_settings_room_mention_label" = "@group 时通知我";
 "screen_notification_settings_system_notifications_action_required" = "要接收通知，请更改您的 %1$@。";
 "screen_notification_settings_system_notifications_action_required_content_link" = "系统设置";
 "screen_notification_settings_system_notifications_turned_off" = "系统通知已关闭";

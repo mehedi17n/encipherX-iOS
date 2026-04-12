@@ -125,9 +125,9 @@
 			<key>NSStringFormatValueTypeKey</key>
 			<string>d</string>
 			<key>one</key>
-			<string>%1$d Room</string>
+			<string>%1$d Group</string>
 			<key>other</key>
-			<string>%1$d Rooms</string>
+			<string>%1$d Groups</string>
 		</dict>
 	</dict>
 	<key>common_selected_count</key>
@@ -269,9 +269,9 @@
 			<key>NSStringFormatValueTypeKey</key>
 			<string>d</string>
 			<key>one</key>
-			<string>%d room</string>
+			<string>%d group</string>
 			<key>other</key>
-			<string>%d rooms</string>
+			<string>%d groups</string>
 		</dict>
 	</dict>
 	<key>screen_app_lock_subtitle</key>
@@ -317,9 +317,9 @@
 			<key>NSStringFormatValueTypeKey</key>
 			<string>d</string>
 			<key>one</key>
-			<string>Leave %1$d room and space</string>
+			<string>Leave %1$d group and space</string>
 			<key>other</key>
-			<string>Leave %1$d rooms and space</string>
+			<string>Leave %1$d groups and space</string>
 		</dict>
 	</dict>
 	<key>screen_pinned_timeline_screen_title</key>
@@ -397,9 +397,9 @@
 			<key>NSStringFormatValueTypeKey</key>
 			<string>d</string>
 			<key>one</key>
-			<string>%1$@ +%2$d other want to join this room</string>
+			<string>%1$@ +%2$d other want to join this group</string>
 			<key>other</key>
-			<string>%1$@ +%2$d others want to join this room</string>
+			<string>%1$@ +%2$d others want to join this group</string>
 		</dict>
 	</dict>
 	<key>screen_room_timeline_reaction_a11y</key>
@@ -445,9 +445,9 @@
 			<key>NSStringFormatValueTypeKey</key>
 			<string>d</string>
 			<key>one</key>
-			<string>%1$d room change</string>
+			<string>%1$d group change</string>
 			<key>other</key>
-			<string>%1$d room changes</string>
+			<string>%1$d group changes</string>
 		</dict>
 	</dict>
 	<key>screen_room_typing_many_members</key>
@@ -493,9 +493,9 @@
 			<key>NSStringFormatValueTypeKey</key>
 			<string>d</string>
 			<key>one</key>
-			<string>Remove %1$d room from %2$@</string>
+			<string>Remove %1$d group from %2$@</string>
 			<key>other</key>
-			<string>Remove %1$d rooms from %2$@</string>
+			<string>Remove %1$d groups from %2$@</string>
 		</dict>
 	</dict>
 	<key>troubleshoot_notifications_test_blocked_users_result_some</key>

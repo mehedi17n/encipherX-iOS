@@ -53,16 +53,16 @@ struct MentionSuggestionItemView_Previews: PreviewProvider, TestablePreview {
             .previewDisplayName("User")
         MentionSuggestionItemView(mediaProvider: mockMediaProvider, item: .init(suggestionType: .user(.init(id: "test2", displayName: nil, avatarURL: nil)), range: .init(), rawSuggestionText: ""))
             .previewDisplayName("User no display name")
-        MentionSuggestionItemView(mediaProvider: mockMediaProvider, item: .init(suggestionType: .allUsers(.room(id: "room", name: "Room", avatarURL: .mockMXCAvatar)), range: .init(), rawSuggestionText: ""))
+        MentionSuggestionItemView(mediaProvider: mockMediaProvider, item: .init(suggestionType: .allUsers(.room(id: "room", name: "Group", avatarURL: .mockMXCAvatar)), range: .init(), rawSuggestionText: ""))
             .previewDisplayName("All users")
         MentionSuggestionItemView(mediaProvider: mockMediaProvider,
                                   item: .init(suggestionType: .room(.init(id: "room",
                                                                           canonicalAlias: "#room:matrix.org",
-                                                                          name: "Room",
+                                                                          name: "Group",
                                                                           avatar: .room(id: "room",
-                                                                                        name: "Room", avatarURL: .mockMXCAvatar))),
+                                                                                        name: "Group", avatarURL: .mockMXCAvatar))),
                                               range: .init(),
                                               rawSuggestionText: ""))
-            .previewDisplayName("Room")
+            .previewDisplayName("Group")
     }
 }

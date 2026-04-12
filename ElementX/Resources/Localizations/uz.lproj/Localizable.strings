@@ -54,7 +54,7 @@
 "a11y.your_avatar" = "Sizning avataringiz";
 "action_accept" = "Qabul qiling";
 "action_add_caption" = "Sarlavha qo'shing";
-"action_add_existing_rooms" = "Add existing rooms";
+"action_add_existing_rooms" = "Add existing groups";
 "action_add_to_timeline" = "Vaqt jadvaliga qo'shing";
 "action_back" = "Orqaga";
 "action_call" = "Qoʻngʻiroq";
@@ -390,8 +390,8 @@
 "crypto_event_authenticity_unknown_device" = "Nomaʼlum yoki oʻchirib tashlangan qurilma tomonidan shifrlangan.";
 "crypto_event_authenticity_unsigned_device" = "Egasi tasdiqlamagan qurilma tomonidan shifrlangan.";
 "crypto_event_authenticity_unverified_identity" = "Tasdiqlanmagan foydalanuvchi tomonidan shifrlangan.";
-"crypto_event_key_forwarded_known_profile_dialog_content" = "%1$@ (%2$@) shared this message since you were not in the room when it was sent.";
-"crypto_event_key_forwarded_unknown_profile_dialog_content" = "%1$@ shared this message since you were not in the room when it was sent.";
+"crypto_event_key_forwarded_known_profile_dialog_content" = "%1$@ (%2$@) shared this message since you were not in the group when it was sent.";
+"crypto_event_key_forwarded_unknown_profile_dialog_content" = "%1$@ shared this message since you were not in the group when it was sent.";
 "crypto_history_sharing_room_info_hidden_badge_content" = "New members don't see history";
 "crypto_history_sharing_room_info_shared_badge_content" = "New members see history";
 "crypto_history_sharing_room_info_world_readable_badge_content" = "Anyone can see history";
@@ -565,7 +565,7 @@
 "screen_create_poll_settings_section_title" = "Sozlamalar";
 "screen_create_room_error_creating_space" = "The space could not be created because of an unknown error. Try again later.";
 "screen_create_room_name_placeholder" = "Add name…";
-"screen_create_room_new_room_title" = "New room";
+"screen_create_room_new_room_title" = "New group";
 "screen_create_room_new_space_title" = "New space";
 "screen_create_room_public_option_short_description" = "Anyone can join.";
 "screen_create_room_room_access_section_knocking_option_description" = "Xonaga qo‘shilishni istalgan kishi so‘rashi mumkin, lekin administrator yoki moderator so‘rovni qabul qilishi kerak";
@@ -716,7 +716,7 @@
 "screen_room_member_list_pending_status" = "Jarayonda";
 "screen_room_roles_and_permissions_space_details" = "Maydon tafsilotlari";
 "screen_room_timeline_tombstoned_room_action" = "Yangi xonaga o‘tish";
-"screen_room_timeline_tombstoned_room_message" = "Bu room almashtirildi va endi faol emas";
+"screen_room_timeline_tombstoned_room_message" = "Bu group almashtirildi va endi faol emas";
 "screen_room_timeline_upgraded_room_action" = "Eski xabarlarni ko‘rish";
 "screen_room_timeline_upgraded_room_message" = "Bu xona boshqa xonaning davomi";
 "screen_room_timeline_reactions_show_reactions_summary" = "Reaksiyalar xulosasini chiqarish";
@@ -758,12 +758,12 @@
 "screen_security_and_privacy_title" = "Xavfsizlik va maxfiylik";
 "screen_share_location_live_location_duration_picker_title" = "Choose how long to share your live location.";
 "screen_sharing_location_option_sheet_title" = "Sharing options";
-"screen_space_add_room_action" = "Room";
-"screen_space_empty_state_title" = "Add your first room";
+"screen_space_add_room_action" = "Group";
+"screen_space_empty_state_title" = "Add your first group";
 "screen_space_menu_action_members" = "A’zolarni ko‘rish";
-"screen_space_remove_rooms_confirmation_content" = "Removing a room will not affect the room access. To change the access go to Room info > Privacy & security.";
-"screen_space_remove_rooms_confirmation_title_ios" = "Remove rooms from %1$@?";
-"screen_space_add_rooms_room_access_description" = "Adding a room will not affect the room access. To change the access go to Room settings > Security & privacy.";
+"screen_space_remove_rooms_confirmation_content" = "Removing a group will not affect the group access. To change the access go to Group info > Privacy & security.";
+"screen_space_remove_rooms_confirmation_title_ios" = "Remove groups from %1$@?";
+"screen_space_add_rooms_room_access_description" = "Adding a group will not affect the group access. To change the access go to Group settings > Security & privacy.";
 "screen_space_announcement_item1" = "Siz yaratgan yoki qo‘shilgan maydonlarni ko‘rish";
 "screen_space_announcement_item2" = "Maydonlarga takliflarni qabul qilish yoki rad etish";
 "screen_space_announcement_item3" = "Maydonlaringizga qo‘shilishingiz mumkin bo‘lgan xonalarni kashf eting";
@@ -774,7 +774,7 @@
 "screen_space_announcement_title" = "Maydonlar bilan tanishish";
 "screen_space_list_description" = "Siz yaratgan yoki qo‘shilgan maydonlar.";
 "screen_space_list_details" = "%1$@•%2$@";
-"screen_space_list_empty_state_title" = "Create spaces to organize rooms";
+"screen_space_list_empty_state_title" = "Create spaces to organize groups";
 "screen_space_list_parent_space" = "%1$@ ta maydon";
 "screen_space_list_title" = "Maydonlar";
 "screen_start_chat_join_room_by_address_action" = "Xonaga manzil orqali kirish";
@@ -1007,7 +1007,7 @@
 "screen_notification_settings_mode_all" = "Hammasi";
 "screen_notification_settings_mode_mentions" = "Eslatmalar";
 "screen_notification_settings_notification_section_title" = "Menga xabar bering";
-"screen_notification_settings_room_mention_label" = "Menga @room orqali xabar bering";
+"screen_notification_settings_room_mention_label" = "Menga @group orqali xabar bering";
 "screen_notification_settings_system_notifications_action_required" = "Bildirishnomalarni olish uchun, iltimos, o'zingizni %1$@ingizni o'zgartiring.";
 "screen_notification_settings_system_notifications_action_required_content_link" = "tizim sozlamalari";
 "screen_notification_settings_system_notifications_turned_off" = "Tizim bildirishnomalari o'chirilgan";

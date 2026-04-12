@@ -1007,7 +1007,7 @@
 "screen_notification_settings_mode_all" = "Kaikki";
 "screen_notification_settings_mode_mentions" = "Maininnat";
 "screen_notification_settings_notification_section_title" = "Ilmoita minulle";
-"screen_notification_settings_room_mention_label" = "Ilmoita minulle @room-maininnoista";
+"screen_notification_settings_room_mention_label" = "Ilmoita minulle @group-maininnoista";
 "screen_notification_settings_system_notifications_action_required" = "Jos haluat saada ilmoituksia, vaihda %1$@.";
 "screen_notification_settings_system_notifications_action_required_content_link" = "järjestelmäsi asetuksia";
 "screen_notification_settings_system_notifications_turned_off" = "Järjestelmän ilmoitukset on poissa päältä";

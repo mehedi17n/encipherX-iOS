@@ -397,12 +397,12 @@ struct CreateRoom_Previews: PreviewProvider, TestablePreview {
         ElementNavigationStack {
             CreateRoomScreen(context: viewModel.context)
         }
-        .previewDisplayName("Create Room")
+        .previewDisplayName("Create Group")
         
         ElementNavigationStack {
             CreateRoomScreen(context: avatarViewModel.context)
         }
-        .previewDisplayName("Create Room with avatar")
+        .previewDisplayName("Create Group with avatar")
         .snapshotPreferences(expect: avatarViewModel.context.$viewState.map { $0.avatarImage != nil })
         
         ElementNavigationStack {
@@ -419,39 +419,39 @@ struct CreateRoom_Previews: PreviewProvider, TestablePreview {
         ElementNavigationStack {
             CreateRoomScreen(context: publicRoomViewModel.context)
         }
-        .previewDisplayName("Create Public Room")
+        .previewDisplayName("Create Public Group")
         
         ElementNavigationStack {
             CreateRoomScreen(context: askToJoinViewModel.context)
         }
-        .previewDisplayName("Create Knockable Room")
+        .previewDisplayName("Create Knockable Group")
         
         ElementNavigationStack {
             CreateRoomScreen(context: publicRoomInvalidAliasViewModel.context)
         }
         .snapshotPreferences(expect: publicRoomInvalidAliasViewModel.context.$viewState.map { !$0.aliasErrors.isEmpty })
-        .previewDisplayName("Create Public Room, invalid alias")
+        .previewDisplayName("Create Public Group, invalid alias")
         
         ElementNavigationStack {
             CreateRoomScreen(context: publicRoomExistingAliasViewModel.context)
         }
         .snapshotPreferences(expect: publicRoomExistingAliasViewModel.context.$viewState.map { !$0.aliasErrors.isEmpty })
-        .previewDisplayName("Create Public Room, existing alias")
+        .previewDisplayName("Create Public Group, existing alias")
         
         ElementNavigationStack {
             CreateRoomScreen(context: selectedSpaceViewModel.context)
         }
-        .previewDisplayName("Create Room with already selected Space")
+        .previewDisplayName("Create Group with already selected Space")
         
         ElementNavigationStack {
             CreateRoomScreen(context: selectedSpaceWithListViewModel.context)
         }
-        .previewDisplayName("Create Room with a selected Space from the list")
+        .previewDisplayName("Create Group with a selected Space from the list")
         
         ElementNavigationStack {
             CreateRoomScreen(context: selectedSpaceWithAskToJoinViewModel.context)
         }
-        .previewDisplayName("Create Knockable Room with already selected Space")
+        .previewDisplayName("Create Knockable Group with already selected Space")
     }
     
     private static func makeViewModel(isKnockingEnabled: Bool = false,

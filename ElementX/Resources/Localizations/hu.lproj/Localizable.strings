@@ -1007,7 +1007,7 @@
 "screen_notification_settings_mode_all" = "Összes";
 "screen_notification_settings_mode_mentions" = "Említések";
 "screen_notification_settings_notification_section_title" = "Értesítés ezekről:";
-"screen_notification_settings_room_mention_label" = "Értesítés a @room említésekor";
+"screen_notification_settings_room_mention_label" = "Értesítés a @group említésekor";
 "screen_notification_settings_system_notifications_action_required" = "Az értesítések fogadásához kérjük, módosítsa a %1$@.";
 "screen_notification_settings_system_notifications_action_required_content_link" = "rendszerbeállításokat";
 "screen_notification_settings_system_notifications_turned_off" = "A rendszerértesítések ki vannak kapcsolva";

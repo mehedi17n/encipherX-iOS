@@ -39,7 +39,7 @@
 "a11y_show_password" = "Şifreyi göster";
 "a11y_start_call" = "Bir arama başlatın";
 "a11y_start_voice_call" = "Start a voice call";
-"a11y_tombstoned_room" = "Tombstoned room";
+"a11y_tombstoned_room" = "Tombstoned group";
 "a11y_user_menu" = "Kullanıcı menüsü";
 "a11y_view_avatar" = "View avatar";
 "a11y_view_details" = "Ayrıntıları görüntüle";
@@ -54,7 +54,7 @@
 "a11y.your_avatar" = "Fotoğrafın";
 "action_accept" = "Kabul et";
 "action_add_caption" = "Açıklama ekle";
-"action_add_existing_rooms" = "Add existing rooms";
+"action_add_existing_rooms" = "Add existing groups";
 "action_add_to_timeline" = "Zaman çizelgesine ekle";
 "action_back" = "Geri";
 "action_call" = "Çağrı";
@@ -138,7 +138,7 @@
 "action_report_bug" = "Hata bildir";
 "action_report_content" = "İçeriği bildir";
 "action_report_dm" = "Report conversation";
-"action_report_room" = "Report room";
+"action_report_room" = "Report group";
 "action_reset" = "Sıfırla";
 "action_reset_identity" = "Kimliği sıfırla";
 "action_retry" = "Yeniden dene";
@@ -390,12 +390,12 @@
 "crypto_event_authenticity_unknown_device" = "Bilinmeyen veya silinmiş bir cihaz tarafından şifrelenmiştir.";
 "crypto_event_authenticity_unsigned_device" = "Sahibi tarafından doğrulanmamış bir cihaz tarafından şifrelenmiştir.";
 "crypto_event_authenticity_unverified_identity" = "Doğrulanmamış bir kullanıcı tarafından şifrelenmiştir.";
-"crypto_event_key_forwarded_known_profile_dialog_content" = "%1$@ (%2$@) shared this message since you were not in the room when it was sent.";
-"crypto_event_key_forwarded_unknown_profile_dialog_content" = "%1$@ shared this message since you were not in the room when it was sent.";
+"crypto_event_key_forwarded_known_profile_dialog_content" = "%1$@ (%2$@) shared this message since you were not in the group when it was sent.";
+"crypto_event_key_forwarded_unknown_profile_dialog_content" = "%1$@ shared this message since you were not in the group when it was sent.";
 "crypto_history_sharing_room_info_hidden_badge_content" = "New members don't see history";
 "crypto_history_sharing_room_info_shared_badge_content" = "New members see history";
 "crypto_history_sharing_room_info_world_readable_badge_content" = "Anyone can see history";
-"crypto_history_visible" = "This room has been configured so that new members can read history. %1$@";
+"crypto_history_visible" = "This group has been configured so that new members can read history. %1$@";
 "crypto_identity_change_pin_violation" = "%1$@ kişinin kimliği değişti. %2$@";
 "crypto_identity_change_pin_violation_new" = "%1$@'ın %2$@ kimliği değişti. %3$@";
 "crypto_identity_change_pin_violation_new_user_id" = "(%1$@)";
@@ -415,8 +415,8 @@
 "dialog_permission_microphone_title_ios" = "%1$@ mikrofonunuza erişim izni gerekiyor.";
 "dialog_permission_notification" = "Uygulamanın bildirimleri görüntülemesine izin vermek için lütfen sistem ayarlarından izin verin.";
 "dialog_permission_photo_library_title_ios" = "%1$@ fotoğraf arşivinize erişimi yok.";
-"dialog_room_reported" = "Room reported";
-"dialog_room_reported_and_left" = "Reported and left room";
+"dialog_room_reported" = "Group reported";
+"dialog_room_reported_and_left" = "Reported and left group";
 "dialog_default_video_quality_selector_subtitle" = "Yüklediğiniz videoların varsayılan kaliteyi seçin.";
 "dialog_title_confirmation" = "Onaylama";
 "dialog_title_warning" = "Uyarı";
@@ -565,7 +565,7 @@
 "screen_create_poll_settings_section_title" = "Settings";
 "screen_create_room_error_creating_space" = "The space could not be created because of an unknown error. Try again later.";
 "screen_create_room_name_placeholder" = "Add name…";
-"screen_create_room_new_room_title" = "New room";
+"screen_create_room_new_room_title" = "New group";
 "screen_create_room_new_space_title" = "New space";
 "screen_create_room_public_option_short_description" = "Anyone can join.";
 "screen_create_room_room_access_section_knocking_option_description" = "Herkes odaya katılmayı isteyebilir ancak bir yönetici veya moderatörün isteği kabul etmesi gerekecektir";
@@ -585,8 +585,8 @@
 "screen_create_room_space_selection_no_space_title" = "No space selected";
 "screen_create_room_space_selection_sheet_title" = "Add to space";
 "screen_create_room_topic_placeholder" = "Add description…";
-"screen_decline_and_block_block_user_option_description" = "You will not see any messages or room invites from this user";
-"screen_decline_and_block_report_user_option_description" = "Report this room to your account provider.";
+"screen_decline_and_block_block_user_option_description" = "You will not see any messages or group invites from this user";
+"screen_decline_and_block_report_user_option_description" = "Report this group to your account provider.";
 "screen_edit_room_address_room_address_section_footer" = "Dizinde görünür hale getirmek için bir oda adresine ihtiyacınız olacak.";
 "screen_edit_room_address_title" = "Oda adresi";
 "screen_invite_users_already_a_member" = "Zaten üye";
@@ -758,12 +758,12 @@
 "screen_security_and_privacy_title" = "Güvenlik ve gizlilik";
 "screen_share_location_live_location_duration_picker_title" = "Choose how long to share your live location.";
 "screen_sharing_location_option_sheet_title" = "Sharing options";
-"screen_space_add_room_action" = "Room";
-"screen_space_empty_state_title" = "Add your first room";
+"screen_space_add_room_action" = "Group";
+"screen_space_empty_state_title" = "Add your first group";
 "screen_space_menu_action_members" = "Üyeleri görüntüle";
-"screen_space_remove_rooms_confirmation_content" = "Removing a room will not affect the room access. To change the access go to Room info > Privacy & security.";
-"screen_space_remove_rooms_confirmation_title_ios" = "Remove rooms from %1$@?";
-"screen_space_add_rooms_room_access_description" = "Adding a room will not affect the room access. To change the access go to Room settings > Security & privacy.";
+"screen_space_remove_rooms_confirmation_content" = "Removing a group will not affect the group access. To change the access go to Group info > Privacy & security.";
+"screen_space_remove_rooms_confirmation_title_ios" = "Remove groups from %1$@?";
+"screen_space_add_rooms_room_access_description" = "Adding a group will not affect the group access. To change the access go to Group settings > Security & privacy.";
 "screen_space_announcement_item1" = "Oluşturduğunuz veya katıldığınız alanları görüntüleyin";
 "screen_space_announcement_item2" = "Alan davetlerini kabul edin veya reddedin";
 "screen_space_announcement_item3" = "Alanlarınızdaki katılabileceğiniz odaları keşfedin";
@@ -774,7 +774,7 @@
 "screen_space_announcement_title" = "Alanlar ile tanışın";
 "screen_space_list_description" = "Oluşturduğunuz veya katıldığınız alanlar.";
 "screen_space_list_details" = "%1$@ • %2$@";
-"screen_space_list_empty_state_title" = "Create spaces to organize rooms";
+"screen_space_list_empty_state_title" = "Create spaces to organize groups";
 "screen_space_list_parent_space" = "%1$@ space";
 "screen_space_list_title" = "Alanlar";
 "screen_start_chat_join_room_by_address_action" = "Bir adres ile odaya katılın";
@@ -782,7 +782,7 @@
 "screen_start_chat_join_room_by_address_placeholder" = "Enter...";
 "screen_start_chat_join_room_by_address_room_found" = "Eşleşen oda bulundu";
 "screen_start_chat_join_room_by_address_room_not_found" = "Oda bulunamadı";
-"screen_start_chat_join_room_by_address_supporting_text" = "örn. #room-isim:matrix.org";
+"screen_start_chat_join_room_by_address_supporting_text" = "örn. #group-isim:matrix.org";
 "screen_static_location_sheet_timestamp_description" = "Shared %1$@";
 "screen_static_location_sheet_title" = "On the map";
 "screen_timeline_item_menu_send_failure_changed_identity" = "%1$@ kullanıcısının doğrulanmış kimliği değiştiği için ileti gönderilmedi.";
@@ -1007,7 +1007,7 @@
 "screen_notification_settings_mode_all" = "Tümü";
 "screen_notification_settings_mode_mentions" = "Bahsetmeler";
 "screen_notification_settings_notification_section_title" = "Bana bildir";
-"screen_notification_settings_room_mention_label" = "Bana @room'da bildir";
+"screen_notification_settings_room_mention_label" = "Bana @group'da bildir";
 "screen_notification_settings_system_notifications_action_required" = "Bildirimleri almak için lütfen %1$@ değiştirin.";
 "screen_notification_settings_system_notifications_action_required_content_link" = "si̇stem ayarları";
 "screen_notification_settings_system_notifications_turned_off" = "Sistem bildirimleri kapalı";
@@ -1473,7 +1473,7 @@
 "screen_link_new_device_mobile_title" = "Diğer cihazda %1$@ uygulamasını açın";
 "screen_link_new_device_wrong_number_title" = "Sayılar uyuşmuyor";
 "screen_pinned_timeline_screen_title_empty" = "Sabitlenmiş mesajlar";
-"screen_report_room_title" = "Report room";
+"screen_report_room_title" = "Report group";
 "screen_room_mentions_at_room_title" = "Herkes";
 "screen_room_single_knock_request_accept_button_title" = "Kabul et";
 "screen_room_single_knock_request_view_button_title" = "View";

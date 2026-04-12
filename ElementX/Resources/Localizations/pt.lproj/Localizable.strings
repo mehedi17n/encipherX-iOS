@@ -54,7 +54,7 @@
 "a11y.your_avatar" = "O teu avatar";
 "action_accept" = "Aceitar";
 "action_add_caption" = "Adicionar legenda";
-"action_add_existing_rooms" = "Add existing rooms";
+"action_add_existing_rooms" = "Add existing groups";
 "action_add_to_timeline" = "Adicionar à cronologia";
 "action_back" = "Voltar";
 "action_call" = "Chamar";
@@ -390,12 +390,12 @@
 "crypto_event_authenticity_unknown_device" = "Cifragem com origem num dispositivo eliminado ou desconhecido.";
 "crypto_event_authenticity_unsigned_device" = "Cifragem com origem num dispositivo não verificado pelo seu dono.";
 "crypto_event_authenticity_unverified_identity" = "Cifragem com origem num utilizador não verificado.";
-"crypto_event_key_forwarded_known_profile_dialog_content" = "%1$@ (%2$@) shared this message since you were not in the room when it was sent.";
-"crypto_event_key_forwarded_unknown_profile_dialog_content" = "%1$@ shared this message since you were not in the room when it was sent.";
+"crypto_event_key_forwarded_known_profile_dialog_content" = "%1$@ (%2$@) shared this message since you were not in the group when it was sent.";
+"crypto_event_key_forwarded_unknown_profile_dialog_content" = "%1$@ shared this message since you were not in the group when it was sent.";
 "crypto_history_sharing_room_info_hidden_badge_content" = "New members don't see history";
 "crypto_history_sharing_room_info_shared_badge_content" = "New members see history";
 "crypto_history_sharing_room_info_world_readable_badge_content" = "Anyone can see history";
-"crypto_history_visible" = "This room has been configured so that new members can read history. %1$@";
+"crypto_history_visible" = "This group has been configured so that new members can read history. %1$@";
 "crypto_identity_change_pin_violation" = "A identidade de %1$@ foi reposta. %2$@";
 "crypto_identity_change_pin_violation_new" = "A identidade de %1$@ (%2$@) foi reposta. %3$@";
 "crypto_identity_change_pin_violation_new_user_id" = "(%1$@)";
@@ -565,7 +565,7 @@
 "screen_create_poll_settings_section_title" = "Configurações";
 "screen_create_room_error_creating_space" = "The space could not be created because of an unknown error. Try again later.";
 "screen_create_room_name_placeholder" = "Add name…";
-"screen_create_room_new_room_title" = "New room";
+"screen_create_room_new_room_title" = "New group";
 "screen_create_room_new_space_title" = "New space";
 "screen_create_room_public_option_short_description" = "Anyone can join.";
 "screen_create_room_room_access_section_knocking_option_description" = "Qualquer pessoa pode pedir para entrar, mas um administrador ou um moderador terá de aceitar o pedido.";
@@ -657,7 +657,7 @@
 "screen_link_new_device_root_mobile_device" = "Mobile device";
 "screen_link_new_device_root_title" = "What type of device do you want to link?";
 "screen_link_new_device_wrong_number_subtitle" = "Please try again and make sure that you’ve entered the 2-digit code correctly. If the numbers still don’t match then contact your account provider.";
-"screen_manage_authorized_spaces_header" = "Spaces where members can join the room without an invitation.";
+"screen_manage_authorized_spaces_header" = "Spaces where members can join the group without an invitation.";
 "screen_manage_authorized_spaces_title" = "Manage spaces";
 "screen_manage_authorized_spaces_unknown_space" = "(Unknown space)";
 "screen_manage_authorized_spaces_unknown_spaces_section_title" = "Other spaces you’re not a member of";
@@ -735,7 +735,7 @@
 "screen_security_and_privacy_encryption_toggle_title" = "Ativar cifragem ponta-a-ponta";
 "screen_security_and_privacy_room_access_anyone_option_description" = "Qualquer pessoa pode entrar.";
 "screen_security_and_privacy_room_access_anyone_option_title" = "Qualquer pessoa";
-"screen_security_and_privacy_room_access_footer" = "Choose which spaces’ members can join this room without an invitation. %1$@";
+"screen_security_and_privacy_room_access_footer" = "Choose which spaces’ members can join this group without an invitation. %1$@";
 "screen_security_and_privacy_room_access_invite_only_option_description" = "Apenas pessoas convidadas podem entrar.";
 "screen_security_and_privacy_room_access_invite_only_option_title" = "Apenas por convite";
 "screen_security_and_privacy_room_access_section_header" = "Acesso";
@@ -758,12 +758,12 @@
 "screen_security_and_privacy_title" = "Segurança e privacidade";
 "screen_share_location_live_location_duration_picker_title" = "Choose how long to share your live location.";
 "screen_sharing_location_option_sheet_title" = "Sharing options";
-"screen_space_add_room_action" = "Room";
-"screen_space_empty_state_title" = "Add your first room";
+"screen_space_add_room_action" = "Group";
+"screen_space_empty_state_title" = "Add your first group";
 "screen_space_menu_action_members" = "Ver participantes";
-"screen_space_remove_rooms_confirmation_content" = "Removing a room will not affect the room access. To change the access go to Room info > Privacy & security.";
-"screen_space_remove_rooms_confirmation_title_ios" = "Remove rooms from %1$@?";
-"screen_space_add_rooms_room_access_description" = "Adding a room will not affect the room access. To change the access go to Room settings > Security & privacy.";
+"screen_space_remove_rooms_confirmation_content" = "Removing a group will not affect the group access. To change the access go to Group info > Privacy & security.";
+"screen_space_remove_rooms_confirmation_title_ios" = "Remove groups from %1$@?";
+"screen_space_add_rooms_room_access_description" = "Adding a group will not affect the group access. To change the access go to Group settings > Security & privacy.";
 "screen_space_announcement_item1" = "Ver espaços que criaste ou nos quais entraste";
 "screen_space_announcement_item2" = "Aceitar ou recusar convites para espaços";
 "screen_space_announcement_item3" = "Descobrir todas as salas dos seus espaços nas quais podes entrar";
@@ -774,7 +774,7 @@
 "screen_space_announcement_title" = "Apresentamos os Espaços";
 "screen_space_list_description" = "Espaços que criaste ou nos quais entraste.";
 "screen_space_list_details" = "%1$@ • %2$@";
-"screen_space_list_empty_state_title" = "Create spaces to organize rooms";
+"screen_space_list_empty_state_title" = "Create spaces to organize groups";
 "screen_space_list_parent_space" = "Espaço %1$@";
 "screen_space_list_title" = "Espaços";
 "screen_start_chat_join_room_by_address_action" = "Entrar na sala pelo endereço";
@@ -1007,7 +1007,7 @@
 "screen_notification_settings_mode_all" = "Tudo";
 "screen_notification_settings_mode_mentions" = "Menções";
 "screen_notification_settings_notification_section_title" = "Conversas";
-"screen_notification_settings_room_mention_label" = "Quando aparece uma @room";
+"screen_notification_settings_room_mention_label" = "Quando aparece uma @group";
 "screen_notification_settings_system_notifications_action_required" = "Para receberes notificações, altera as tuas %1$@.";
 "screen_notification_settings_system_notifications_action_required_content_link" = "configurações do sistema";
 "screen_notification_settings_system_notifications_turned_off" = "Notificações do sistema desativadas";

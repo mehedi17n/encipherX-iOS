@@ -63,15 +63,15 @@ struct PillView_Previews: PreviewProvider, TestablePreview {
                                                                displayText: PillUtilities.userPillDisplayText(username: "Alice", userID: "@alice:matrix.org")))) { }
             .frame(maxWidth: PillUtilities.mockMaxWidth)
             .previewDisplayName("Own user")
-        PillView(context: PillContext.mock(viewState: .reference(displayText: PillUtilities.roomPillDisplayText(roomName: "Room",
+        PillView(context: PillContext.mock(viewState: .reference(displayText: PillUtilities.roomPillDisplayText(roomName: "Group",
                                                                                                                 rawRoomText: "#room:matrix.org")))) { }
             .frame(maxWidth: PillUtilities.mockMaxWidth)
-            .previewDisplayName("Room")
+            .previewDisplayName("Group")
         PillView(context: PillContext.mock(viewState: .reference(displayText: PillUtilities.roomPillDisplayText(roomName: nil,
                                                                                                                 rawRoomText: "#room:matrix.org")))) { }
             .frame(maxWidth: PillUtilities.mockMaxWidth)
-            .previewDisplayName("Room without name")
-        PillView(context: PillContext.mock(viewState: .reference(displayText: PillUtilities.eventPillDisplayText(roomName: "Room", rawRoomText: "#room:matrix.org")))) { }
+            .previewDisplayName("Group without name")
+        PillView(context: PillContext.mock(viewState: .reference(displayText: PillUtilities.eventPillDisplayText(roomName: "Group", rawRoomText: "#room:matrix.org")))) { }
             .frame(maxWidth: PillUtilities.mockMaxWidth)
             .previewDisplayName("Message link")
         PillView(context: PillContext.mock(viewState: .reference(displayText: PillUtilities.eventPillDisplayText(roomName: nil, rawRoomText: "#room:matrix.org")))) { }

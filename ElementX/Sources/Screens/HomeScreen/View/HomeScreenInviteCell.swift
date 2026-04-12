@@ -241,7 +241,7 @@ private extension HomeScreenRoom {
         return .init(summary: summary, hideUnreadMessagesBadge: false)
     }
     
-    static func invite(name: String = "Awesome Room",
+    static func invite(name: String = "Awesome Group",
                        isSpace: Bool = false,
                        alias: String? = nil,
                        avatarURL: URL? = nil) -> HomeScreenRoom {

@@ -12,7 +12,7 @@ import XCTest
 class UserSessionScreenTests: XCTestCase {
     let firstRoomName = "Foundation 🔭🪐🌌"
     let firstSpaceName = "The Foundation"
-    let unjoinedSpaceRoomName = "Company Room"
+    let unjoinedSpaceRoomName = "Company Group"
     let joinedSubspaceName = "Joined Space"
     let joinedSubspaceRoomName = "Management"
     let spaceInviteName = "First space"

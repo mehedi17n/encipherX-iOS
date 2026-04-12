@@ -250,7 +250,7 @@ extension [SpaceServiceRoom] {
     }
     
     private static func makeSpaceRooms(isSpace: Bool) -> [SpaceServiceRoom] {
-        let typeName = isSpace ? "Space" : "Room"
+        let typeName = isSpace ? "Space" : "Group"
         
         return [
             SpaceServiceRoom.mock(id: "!\(typeName.lowercased())1:matrix.org",

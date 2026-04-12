@@ -51,7 +51,7 @@ struct DeveloperOptionsScreen: View {
                     .generalSectionRows()
             }
             
-            Section("Room List") {
+            Section("Group List") {
                 Toggle(isOn: $context.publicSearchEnabled) {
                     Text("Public search")
                 }

@@ -351,9 +351,9 @@
 			<key>NSStringFormatValueTypeKey</key>
 			<string>d</string>
 			<key>one</key>
-			<string>Leave %1$d room and space</string>
+			<string>Leave %1$d group and space</string>
 			<key>other</key>
-			<string>Leave %1$d rooms and space</string>
+			<string>Leave %1$d groups and space</string>
 		</dict>
 	</dict>
 	<key>screen_pinned_timeline_screen_title</key>
@@ -545,9 +545,9 @@
 			<key>NSStringFormatValueTypeKey</key>
 			<string>d</string>
 			<key>one</key>
-			<string>Remove %1$d room from %2$@</string>
+			<string>Remove %1$d group from %2$@</string>
 			<key>other</key>
-			<string>Remove %1$d rooms from %2$@</string>
+			<string>Remove %1$d groups from %2$@</string>
 		</dict>
 	</dict>
 	<key>troubleshoot_notifications_test_blocked_users_result_some</key>

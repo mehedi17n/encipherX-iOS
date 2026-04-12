@@ -185,7 +185,7 @@ struct SpaceRoomCell_Previews: PreviewProvider, TestablePreview {
                               isSelected: false,
                               isJoining: true,
                               mediaProvider: mediaProvider) { _ in }
-                SpaceRoomCell(spaceServiceRoom: SpaceServiceRoom.mock(id: "Room being joined", isSpace: false),
+                SpaceRoomCell(spaceServiceRoom: SpaceServiceRoom.mock(id: "Group being joined", isSpace: false),
                               isSelected: false,
                               isJoining: true,
                               mediaProvider: mediaProvider) { _ in }

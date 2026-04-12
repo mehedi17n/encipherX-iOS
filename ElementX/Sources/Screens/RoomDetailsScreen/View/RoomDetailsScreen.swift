@@ -341,27 +341,27 @@ struct RoomDetailsScreen_Previews: PreviewProvider, TestablePreview {
     static var previews: some View {
         RoomDetailsScreen(context: genericJoinedRoomViewModel.context)
             .snapshotPreferences(expect: genericJoinedRoomViewModel.context.observe(\.viewState.permalink).map { $0 != nil })
-            .previewDisplayName("Generic Room - Joined History Visibility")
+            .previewDisplayName("Generic Group - Joined History Visibility")
         
         RoomDetailsScreen(context: genericWorldReadableRoomViewModel.context)
             .snapshotPreferences(expect: genericWorldReadableRoomViewModel.context.observe(\.viewState.permalink).map { $0 != nil })
-            .previewDisplayName("Generic Room - World Readable History Visibility")
+            .previewDisplayName("Generic Group - World Readable History Visibility")
         
         RoomDetailsScreen(context: simpleRoomViewModel.context)
             .snapshotPreferences(expect: simpleRoomViewModel.context.observe(\.viewState.permalink).map { $0 != nil })
-            .previewDisplayName("Simple Room")
+            .previewDisplayName("Simple Group")
         
         RoomDetailsScreen(context: dmRoomViewModel.context)
             .snapshotPreferences(expect: dmRoomViewModel.context.observe(\.viewState.accountOwner).map { $0 != nil })
-            .previewDisplayName("DM Room")
+            .previewDisplayName("DM Group")
         
         RoomDetailsScreen(context: dmRoomVerifiedViewModel.context)
             .snapshotPreferences(expect: dmRoomVerifiedViewModel.context.observe(\.viewState.dmRecipientInfo?.verificationState).map { $0 == .verified })
-            .previewDisplayName("DM Room Verified")
+            .previewDisplayName("DM Group Verified")
         
         RoomDetailsScreen(context: dmRoomVerificationViolationViewModel.context)
             .snapshotPreferences(expect: dmRoomVerificationViolationViewModel.context.observe(\.viewState.accountOwner).map { $0 != nil })
-            .previewDisplayName("DM Room Verification Violation")
+            .previewDisplayName("DM Group Verification Violation")
     }
     
     private static func makeGenericRoomViewModel(historyVisibility: RoomHistoryVisibility) -> RoomDetailsScreenViewModel {
@@ -377,7 +377,7 @@ struct RoomDetailsScreen_Previews: PreviewProvider, TestablePreview {
         ]
         
         let roomProxy = JoinedRoomProxyMock(.init(id: "room_a_id",
-                                                  name: "Room A",
+                                                  name: "Group A",
                                                   topic: """
                                                   Discussions about Element X iOS | https://github.com/vector-im/element-x-ios
                                                   
@@ -420,7 +420,7 @@ struct RoomDetailsScreen_Previews: PreviewProvider, TestablePreview {
             .mockCharlie
         ]
         let roomProxy = JoinedRoomProxyMock(.init(id: "simple_room_id",
-                                                  name: "Room A",
+                                                  name: "Group A",
                                                   isDirect: false,
                                                   isEncrypted: false,
                                                   members: members,

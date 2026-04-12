@@ -782,7 +782,7 @@
 "screen_start_chat_join_room_by_address_placeholder" = "Ввести...";
 "screen_start_chat_join_room_by_address_room_found" = "Комната найдена";
 "screen_start_chat_join_room_by_address_room_not_found" = "Комната не найдена";
-"screen_start_chat_join_room_by_address_supporting_text" = "прим. #room-name:matrix.org";
+"screen_start_chat_join_room_by_address_supporting_text" = "прим. #group-name:matrix.org";
 "screen_static_location_sheet_timestamp_description" = "Поделился %1$@";
 "screen_static_location_sheet_title" = "На карте";
 "screen_timeline_item_menu_send_failure_changed_identity" = "Сообщение не отправлено, потому что подтвержденная личность %1$@ была сброшена.";
@@ -1007,7 +1007,7 @@
 "screen_notification_settings_mode_all" = "Все";
 "screen_notification_settings_mode_mentions" = "Упоминания";
 "screen_notification_settings_notification_section_title" = "Уведомлять меня";
-"screen_notification_settings_room_mention_label" = "Уведомлять меня при упоминании @room";
+"screen_notification_settings_room_mention_label" = "Уведомлять меня при упоминании @group";
 "screen_notification_settings_system_notifications_action_required" = "Чтобы получать уведомления, измените %1$@.";
 "screen_notification_settings_system_notifications_action_required_content_link" = "системные настройки";
 "screen_notification_settings_system_notifications_turned_off" = "Системные уведомления выключены";

@@ -364,7 +364,7 @@ struct TimelineItemBubbledStylerView_Previews: PreviewProvider, TestablePreview 
         let appSettings = AppSettings()
         appSettings.threadsEnabled = true
         
-        let roomProxy = JoinedRoomProxyMock(.init(name: "Preview Room", pinnedEventIDs: ["pinned"]))
+        let roomProxy = JoinedRoomProxyMock(.init(name: "Preview Group", pinnedEventIDs: ["pinned"]))
         return TimelineViewModel(roomProxy: roomProxy,
                                  focussedEventID: nil,
                                  timelineController: MockTimelineController(),

@@ -54,7 +54,7 @@
 "a11y.your_avatar" = "Vaš avatar";
 "action_accept" = "Prihvati";
 "action_add_caption" = "Dodaj opis";
-"action_add_existing_rooms" = "Add existing rooms";
+"action_add_existing_rooms" = "Add existing groups";
 "action_add_to_timeline" = "Dodaj na vremensku traku";
 "action_back" = "Natrag";
 "action_call" = "Poziv";
@@ -390,8 +390,8 @@
 "crypto_event_authenticity_unknown_device" = "Šifrirano nepoznatim ili izbrisanim uređajem.";
 "crypto_event_authenticity_unsigned_device" = "Šifrirano uređajem koji vlasnik nije potvrdio.";
 "crypto_event_authenticity_unverified_identity" = "Šifrirao neprovjereni korisnik.";
-"crypto_event_key_forwarded_known_profile_dialog_content" = "%1$@ (%2$@) shared this message since you were not in the room when it was sent.";
-"crypto_event_key_forwarded_unknown_profile_dialog_content" = "%1$@ shared this message since you were not in the room when it was sent.";
+"crypto_event_key_forwarded_known_profile_dialog_content" = "%1$@ (%2$@) shared this message since you were not in the group when it was sent.";
+"crypto_event_key_forwarded_unknown_profile_dialog_content" = "%1$@ shared this message since you were not in the group when it was sent.";
 "crypto_history_sharing_room_info_hidden_badge_content" = "New members don't see history";
 "crypto_history_sharing_room_info_shared_badge_content" = "New members see history";
 "crypto_history_sharing_room_info_world_readable_badge_content" = "Anyone can see history";
@@ -758,12 +758,12 @@
 "screen_security_and_privacy_title" = "Sigurnost i privatnost";
 "screen_share_location_live_location_duration_picker_title" = "Choose how long to share your live location.";
 "screen_sharing_location_option_sheet_title" = "Sharing options";
-"screen_space_add_room_action" = "Room";
-"screen_space_empty_state_title" = "Add your first room";
+"screen_space_add_room_action" = "Group";
+"screen_space_empty_state_title" = "Add your first group";
 "screen_space_menu_action_members" = "Prikaži članove";
-"screen_space_remove_rooms_confirmation_content" = "Removing a room will not affect the room access. To change the access go to Room info > Privacy & security.";
-"screen_space_remove_rooms_confirmation_title_ios" = "Remove rooms from %1$@?";
-"screen_space_add_rooms_room_access_description" = "Adding a room will not affect the room access. To change the access go to Room settings > Security & privacy.";
+"screen_space_remove_rooms_confirmation_content" = "Removing a group will not affect the group access. To change the access go to Group info > Privacy & security.";
+"screen_space_remove_rooms_confirmation_title_ios" = "Remove groups from %1$@?";
+"screen_space_add_rooms_room_access_description" = "Adding a group will not affect the group access. To change the access go to Group settings > Security & privacy.";
 "screen_space_announcement_item1" = "Pregledajte prostore koje ste stvorili ili kojima ste se pridružili";
 "screen_space_announcement_item2" = "Prihvatite ili odbijte pozivnice za prostore";
 "screen_space_announcement_item3" = "Otkrijte sve sobe kojima se možete pridružiti u svojim prostorima";
@@ -774,7 +774,7 @@
 "screen_space_announcement_title" = "Predstavljamo prostore";
 "screen_space_list_description" = "Prostori koje ste stvorili ili kojima ste se pridružili.";
 "screen_space_list_details" = "%1$@ • %2$@";
-"screen_space_list_empty_state_title" = "Create spaces to organize rooms";
+"screen_space_list_empty_state_title" = "Create spaces to organize groups";
 "screen_space_list_parent_space" = "Prostor %1$@";
 "screen_space_list_title" = "Prostori";
 "screen_start_chat_join_room_by_address_action" = "Pridruži se sobi putem adrese";

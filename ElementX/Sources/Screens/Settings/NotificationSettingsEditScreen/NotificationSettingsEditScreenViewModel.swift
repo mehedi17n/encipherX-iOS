@@ -101,7 +101,7 @@ class NotificationSettingsEditScreenViewModel: NotificationSettingsEditScreenVie
     
     private func setupRoomSummaryProviderSubscription() {
         guard let roomSummaryProvider else {
-            MXLog.error("Room summary provider unavailable")
+            MXLog.error("Group summary provider unavailable")
             return
         }
         
@@ -115,7 +115,7 @@ class NotificationSettingsEditScreenViewModel: NotificationSettingsEditScreenVie
     
     private func updateRoomsWithUserDefinedMode() {
         guard let roomSummaryProvider else {
-            MXLog.error("Room summary provider unavailable")
+            MXLog.error("Group summary provider unavailable")
             return
         }
         
