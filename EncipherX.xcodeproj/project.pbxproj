@@ -623,6 +623,7 @@
 		6EB4EFCB022248C1C19E5728 /* ReportRoomScreenViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8A0C998C111DE27C865220C /* ReportRoomScreenViewModel.swift */; };
 		6EC1105FB2F08A19D6B912A4 /* ConfirmationDialog.swift in Sources */ = {isa = PBXBuildFile; fileRef = E97006B2595B8D4C7D41E0CE /* ConfirmationDialog.swift */; };
 		6ED011142F95C1BC8835DC3E /* TimelineItemKeyForwarder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 189A3BB047442440B2E8CCDA /* TimelineItemKeyForwarder.swift */; };
+		6ED0EE831584F530DF21020D /* EncipherBrandGradient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B8A2E9CDD3E00A47D02EB59 /* EncipherBrandGradient.swift */; };
 		6ED60303267386C5CEC60846 /* SecureBackupLogoutConfirmationScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99B6F17EEA068BE1CCD57AA9 /* SecureBackupLogoutConfirmationScreen.swift */; };
 		6F6C1E4B0B89572E014F378F /* CallScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F3419699F0D1687BD6B0FA1 /* CallScreen.swift */; };
 		6F8402173CDA078434D2967F /* RoomSummaryProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F1A522E5C401DE7AA73C5CE /* RoomSummaryProvider.swift */; };
@@ -2177,6 +2178,7 @@
 		6B5513C3A7912CB77634C754 /* TemplateScreenViewModelProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TemplateScreenViewModelProtocol.swift; sourceTree = "<group>"; };
 		6B63C662EE87DBD52E5362B2 /* LeaveSpaceModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeaveSpaceModels.swift; sourceTree = "<group>"; };
 		6B867296D8C3A74711300BE5 /* RoomFlowCoordinatorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomFlowCoordinatorTests.swift; sourceTree = "<group>"; };
+		6B8A2E9CDD3E00A47D02EB59 /* EncipherBrandGradient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EncipherBrandGradient.swift; sourceTree = "<group>"; };
 		6C2E85E0A20468EBF0788706 /* ko */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ko; path = ko.lproj/Localizable.strings; sourceTree = "<group>"; };
 		6C494002B4C772FBA4079A22 /* SecureBackupControllerMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecureBackupControllerMock.swift; sourceTree = "<group>"; };
 		6C6C98C1393BAF3F658ADE9F /* ThreadTimelineScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThreadTimelineScreen.swift; sourceTree = "<group>"; };
@@ -5079,6 +5081,7 @@
 			children = (
 				E0F8DA319F751BB744C394BA /* Backports.swift */,
 				A32B97769CDD29BECD547D58 /* ElementNavigationStack.swift */,
+				6B8A2E9CDD3E00A47D02EB59 /* EncipherBrandGradient.swift */,
 				4E3DEAB5AEB7F26142010CC1 /* PreviewScrollView.swift */,
 				332C52ACB0D04FDCFB038FD6 /* RowDivider.swift */,
 				1BC57BEEF2BD5EDE66845655 /* Search.swift */,
@@ -8170,6 +8173,7 @@
 				64FFBACE99D6A5744094468F /* EmoteRoomTimelineItem.swift in Sources */,
 				B2ADA8585B4A18AB38DF1796 /* EmoteRoomTimelineItemContent.swift in Sources */,
 				33C2730C195D5C85ECE67529 /* EmoteRoomTimelineView.swift in Sources */,
+				6ED0EE831584F530DF21020D /* EncipherBrandGradient.swift in Sources */,
 				5DC46A20040570D0F2380C4D /* Encodable.swift in Sources */,
 				E72EDD0F419D09C39CD869CC /* EncryptedRoomTimelineItem.swift in Sources */,
 				01EF2FDA7ABD6D18F1C9B03E /* EncryptedRoomTimelineView.swift in Sources */,

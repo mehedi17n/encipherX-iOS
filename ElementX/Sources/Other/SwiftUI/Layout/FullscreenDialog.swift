@@ -52,8 +52,8 @@ struct FullscreenDialog<Content: View, BottomContent: View>: View {
         ZStack {
             if let background, showsBackground {
                 Color.clear
-                    .background(alignment: .bottom) {
-                        background.image
+                    .background(alignment: .top) {
+                        background.view
                     }
                     .ignoresSafeArea()
             }
@@ -149,27 +149,15 @@ struct FullscreenDialog<Content: View, BottomContent: View>: View {
 
 /// The different types of background supported by the `FullscreenDialog` view.
 enum FullscreenDialogBackground {
-    /// The bottom gradient from the FTUE flow.
+    /// The brand gradient from the FTUE flow.
     case gradient
-    
-    private var asset: ImageAsset {
+
+    /// The view that represents the background.
+    @ViewBuilder var view: some View {
         switch self {
         case .gradient:
-            Asset.Images.backgroundBottom
+            EncipherBrandGradientBackground()
         }
-    }
-    
-    private var capInsets: EdgeInsets {
-        switch self {
-        case .gradient:
-            EdgeInsets(top: 0, leading: 0, bottom: 250, trailing: 0)
-        }
-    }
-    
-    /// The image that represents the background.
-    var image: Image {
-        Image(asset: asset)
-            .resizable(capInsets: capInsets)
     }
 }
 
