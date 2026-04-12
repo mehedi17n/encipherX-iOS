@@ -66,7 +66,8 @@ struct UserDetailsEditScreen: View {
                                    contentID: context.viewState.userID,
                                    shape: .circle,
                                    avatarSize: .user(on: .editUserDetails),
-                                   mediaProvider: context.mediaProvider)
+                                   mediaProvider: context.mediaProvider,
+                                   isDirect: true)
                 .overlay(alignment: .bottomTrailing) {
                     avatarOverlayIcon
                 }

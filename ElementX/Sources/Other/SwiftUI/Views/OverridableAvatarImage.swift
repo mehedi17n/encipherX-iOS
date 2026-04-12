@@ -17,7 +17,8 @@ struct OverridableAvatarImage: View {
     let shape: LoadableAvatarImage.Shape
     let avatarSize: Avatars.Size
     let mediaProvider: MediaProviderProtocol?
-    
+    var isDirect: Bool = false
+
     var body: some View {
         if let overrideURL {
             AsyncImage(url: overrideURL) { image in
@@ -35,7 +36,8 @@ struct OverridableAvatarImage: View {
                                 contentID: contentID,
                                 shape: shape,
                                 avatarSize: avatarSize,
-                                mediaProvider: mediaProvider)
+                                mediaProvider: mediaProvider,
+                                isDirect: isDirect)
         }
     }
 }

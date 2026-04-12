@@ -104,7 +104,8 @@ struct SpacesScreen: View {
                                     name: context.viewState.userDisplayName,
                                     contentID: context.viewState.userID,
                                     avatarSize: .user(on: .spaces),
-                                    mediaProvider: context.mediaProvider)
+                                    mediaProvider: context.mediaProvider,
+                                    isDirect: true)
                     .accessibilityIdentifier(A11yIdentifiers.homeScreen.userAvatar)
                     .compositingGroup()
             }

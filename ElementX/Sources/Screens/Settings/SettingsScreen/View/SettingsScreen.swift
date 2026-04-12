@@ -54,7 +54,8 @@ struct SettingsScreen: View {
                                             name: context.viewState.userDisplayName,
                                             contentID: context.viewState.userID,
                                             avatarSize: .user(on: .settings),
-                                            mediaProvider: context.mediaProvider)
+                                            mediaProvider: context.mediaProvider,
+                                            isDirect: true)
                             .accessibilityHidden(true)
                         
                         VStack(alignment: .leading, spacing: 2) {
