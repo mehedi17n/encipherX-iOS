@@ -21,15 +21,17 @@ struct LoadableAvatarImage: View {
     private let avatarSize: Avatars.Size
     private let mediaProvider: MediaProviderProtocol?
     private let onTap: ((URL) -> Void)?
-    
+    private let isDirect: Bool?
+
     @ScaledMetric private var frameSize: CGFloat
-    
+
     init(url: URL?,
          name: String?,
          contentID: String,
          shape: LoadableAvatarImage.Shape = .circle,
          avatarSize: Avatars.Size,
          mediaProvider: MediaProviderProtocol?,
+         isDirect: Bool? = nil,
          onTap: ((URL) -> Void)? = nil) {
         self.url = url
         self.name = name
@@ -37,8 +39,9 @@ struct LoadableAvatarImage: View {
         self.shape = shape
         self.avatarSize = avatarSize
         self.mediaProvider = mediaProvider
+        self.isDirect = isDirect
         self.onTap = onTap
-        
+
         _frameSize = ScaledMetric(wrappedValue: avatarSize.value)
     }
     
@@ -73,8 +76,17 @@ struct LoadableAvatarImage: View {
                 image
                     .scaledToFill()
             } placeholder: {
-                PlaceholderAvatarImage(name: name, contentID: contentID)
+                placeholderView
             }
+        } else {
+            placeholderView
+        }
+    }
+
+    @ViewBuilder
+    private var placeholderView: some View {
+        if let isDirect {
+            RoomPlaceholderAvatarImage(name: name, contentID: contentID, isDirect: isDirect)
         } else {
             PlaceholderAvatarImage(name: name, contentID: contentID)
         }

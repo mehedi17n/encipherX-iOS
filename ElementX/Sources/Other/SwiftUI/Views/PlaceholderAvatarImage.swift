@@ -52,6 +52,44 @@ struct PlaceholderAvatarImage: View {
     }
 }
 
+struct RoomPlaceholderAvatarImage: View {
+    @Environment(\.redactionReasons) private var redactionReasons
+
+    private let textForImage: String
+    private let contentID: String
+    private let isDirect: Bool
+
+    var body: some View {
+        GeometryReader { geometry in
+            ZStack(alignment: .center) {
+                backgroundColor
+
+                if redactionReasons != .placeholder {
+                    Image(asset: ImageAsset(name: isDirect ? "user" : "group"))
+                        .resizable()
+                        .scaledToFit()
+                        .frame(width: geometry.size.width * 0.5625, height: geometry.size.width * 0.5625, alignment: .center)
+                }
+            }
+        }
+        .aspectRatio(1, contentMode: .fill)
+    }
+
+    init(name: String?, contentID: String, isDirect: Bool = false) {
+        let baseName = name ?? contentID.trimmingCharacters(in: .punctuationCharacters)
+        textForImage = baseName.first?.uppercased() ?? ""
+        self.contentID = contentID
+        self.isDirect = isDirect
+    }
+
+    private var backgroundColor: Color {
+        if redactionReasons.contains(.placeholder) {
+            return Color(.systemGray4)
+        }
+        return Color(.systemGray4)
+    }
+}
+
 struct PlaceholderAvatarImage_Previews: PreviewProvider, TestablePreview {
     static var previews: some View {
         VStack(spacing: 75) {

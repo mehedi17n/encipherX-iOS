@@ -11,7 +11,7 @@ import SwiftUI
 /// Information about a room avatar such as it's URL or the heroes to use as a fallback.
 enum RoomAvatar: Equatable {
     /// An avatar generated from a Room's details.
-    case room(id: String, name: String?, avatarURL: URL?)
+    case room(id: String, name: String?, avatarURL: URL?, isDirect: Bool = false)
     /// An avatar generated from a collection of room heroes.
     case heroes([UserProfileProxy])
     /// An avatar generated from a Space's details.
@@ -21,8 +21,8 @@ enum RoomAvatar: Equatable {
     
     var removingAvatar: RoomAvatar {
         switch self {
-        case let .room(id, name, _):
-            .room(id: id, name: name, avatarURL: nil)
+        case let .room(id, name, _, isDirect):
+            .room(id: id, name: name, avatarURL: nil, isDirect: isDirect)
         case let .heroes(users):
             .heroes(users.map { .init(userID: $0.userID, displayName: $0.displayName, avatarURL: nil) })
         case .space(let id, let name, _):
@@ -34,7 +34,7 @@ enum RoomAvatar: Equatable {
     
     var hasURL: Bool {
         switch self {
-        case let .room(_, _, url),
+        case let .room(_, _, url, _),
              let .space(_, _, url):
             return url != nil
         case let .heroes(heroes):
@@ -59,12 +59,13 @@ struct RoomAvatarImage: View {
     
     var body: some View {
         switch avatar {
-        case .room(let id, let name, let avatarURL):
+        case .room(let id, let name, let avatarURL, let isDirect):
             LoadableAvatarImage(url: avatarURL,
                                 name: name,
                                 contentID: id,
                                 avatarSize: avatarSize,
                                 mediaProvider: mediaProvider,
+                                isDirect: isDirect,
                                 onTap: onAvatarTap)
         case .heroes(let users):
             // We will expand upon this with more stack sizes in the future.
@@ -79,14 +80,16 @@ struct RoomAvatarImage: View {
                                         contentID: users[0].userID,
                                         avatarSize: avatarSize,
                                         mediaProvider: mediaProvider,
+                                        isDirect: true,
                                         onTap: onAvatarTap)
                         .scaledFrame(size: clusterSize, alignment: .topTrailing)
-                    
+
                     LoadableAvatarImage(url: users[1].avatarURL,
                                         name: users[1].displayName,
                                         contentID: users[1].userID,
                                         avatarSize: avatarSize,
                                         mediaProvider: mediaProvider,
+                                        isDirect: true,
                                         onTap: onAvatarTap)
                         .mask {
                             Rectangle()
@@ -110,6 +113,7 @@ struct RoomAvatarImage: View {
                                     contentID: users[0].userID,
                                     avatarSize: avatarSize,
                                     mediaProvider: mediaProvider,
+                                    isDirect: true,
                                     onTap: onAvatarTap)
             }
         case .space(let id, let name, let avatarURL):

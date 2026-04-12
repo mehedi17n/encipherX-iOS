@@ -78,7 +78,7 @@ extension BaseRoomInfoProxyProtocol {
             return .heroes(heroes.map(UserProfileProxy.init))
         }
         
-        return .room(id: id, name: displayName, avatarURL: avatarURL)
+        return .room(id: id, name: displayName, avatarURL: avatarURL, isDirect: isDirect)
     }
 }
 
