@@ -438,12 +438,10 @@ private struct OnboardingSlide2FullView: View {
             let iconSize = W * 0.32
 
             ZStack {
-                // Background overlay — scattered decorative rectangles
+                // Background overlay — stretched to fill W×H exactly, no clipping
                 Image(asset: Asset.onboarding2BgOverlay)
                     .resizable()
-                    .scaledToFill()
                     .frame(width: W, height: H)
-                    .clipped()
 
                 // Content on top
                 VStack(spacing: 0) {
@@ -489,16 +487,13 @@ private struct OnboardingSlide3FullView: View {
         GeometryReader { geo in
             let W = geo.size.width
             let H = geo.size.height
-            // onboarding3.svg viewBox is 100×110 → aspect ~0.91
             let iconSize = W * 0.32
 
             ZStack {
-                // Background overlay — scattered shield shapes
+                // Background overlay — stretched to fill W×H exactly, no clipping
                 Image(asset: Asset.onboarding3BgOverlay)
                     .resizable()
-                    .scaledToFill()
                     .frame(width: W, height: H)
-                    .clipped()
 
                 // Content on top
                 VStack(spacing: 0) {
@@ -515,7 +510,7 @@ private struct OnboardingSlide3FullView: View {
                     Image(asset: Asset.onboarding3)
                         .resizable()
                         .scaledToFit()
-                        .frame(width: iconSize)
+                        .frame(width: iconSize, height: iconSize)
 
                     Spacer()
 
