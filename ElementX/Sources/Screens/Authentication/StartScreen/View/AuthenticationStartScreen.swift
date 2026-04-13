@@ -240,7 +240,7 @@ private struct OnboardingLanguagePicker: View {
             .padding(.vertical, 7)
             .background(
                 RoundedRectangle(cornerRadius: cardCornerRadius, style: .continuous)
-                    .fill(isSelected ? Color.white.opacity(0.4) : Color.white.opacity(0.12))
+                    .fill(Color.white.opacity(0.12))
             )
             .overlay(
                 RoundedRectangle(cornerRadius: cardCornerRadius, style: .continuous)
