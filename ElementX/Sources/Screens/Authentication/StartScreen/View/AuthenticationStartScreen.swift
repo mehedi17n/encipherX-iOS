@@ -255,7 +255,7 @@ private struct OnboardingLanguagePicker: View {
         } label: {
             Text(option.shortTitle.uppercased())
                 .font(.system(size: 13, weight: .semibold))
-                .foregroundStyle(isSelected ? Color.encipherGreen : Color.black.opacity(0.75))
+                .foregroundStyle(isSelected ? Color.encipherNavy : Color.black.opacity(0.75))
                 .padding(.horizontal, 14)
                 .padding(.vertical, 8)
                 .background(
@@ -264,7 +264,7 @@ private struct OnboardingLanguagePicker: View {
                 )
                 .overlay(
                     Capsule()
-                        .stroke(isSelected ? Color.encipherGreen.opacity(0.4) : Color.black.opacity(0.1), lineWidth: 0.8)
+                        .stroke(isSelected ? Color.encipherNavy.opacity(0.4) : Color.black.opacity(0.1), lineWidth: 0.8)
                 )
         }
         .buttonStyle(.plain)
