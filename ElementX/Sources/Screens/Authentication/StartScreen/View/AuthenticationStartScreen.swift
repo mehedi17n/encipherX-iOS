@@ -212,22 +212,15 @@ private struct OnboardingLanguagePicker: View {
     @Binding var isExpanded: Bool
     let action: (PickerAction) -> Void
 
+    private let cardCornerRadius: CGFloat = 10
+
     var body: some View {
         HStack(spacing: 8) {
-            Button {
-                action(.toggle)
-            } label: {
-                Image(systemName: "globe")
-                    .font(.system(size: 15, weight: .semibold))
-                    .foregroundStyle(.compound.textPrimary)
-                    .padding(.horizontal, 10)
-                    .padding(.vertical, 6)
-                    .background(
-                        Capsule()
-                            .fill(Color.white.opacity(0.15))
-                    )
-            }
-            .buttonStyle(.plain)
+            Image(asset: Asset.Images.language)
+                .resizable()
+                .scaledToFit()
+                .frame(width: 34, height: 34)
+                .onTapGesture { action(.toggle) }
 
             if isExpanded {
                 ForEach(options) { option in
@@ -236,40 +229,26 @@ private struct OnboardingLanguagePicker: View {
                 }
             }
         }
-        .padding(.horizontal, 14)
-        .padding(.vertical, 8)
-        .background(
-            RoundedRectangle(cornerRadius: 28, style: .continuous)
-                .fill(.ultraThickMaterial)
-                .overlay(
-                    RoundedRectangle(cornerRadius: 28, style: .continuous)
-                        .strokeBorder(Color.white.opacity(0.35), lineWidth: 1)
-                )
-        )
     }
 
     @ViewBuilder
     private func languageButton(for option: AuthenticationLanguageOption, isSelected: Bool) -> some View {
-        Button {
-            action(.select(option.id))
-        } label: {
-            Text(option.shortTitle.uppercased())
-                .font(.system(size: 13, weight: .semibold))
-                .foregroundStyle(isSelected ? Color.encipherNavy : Color.black.opacity(0.75))
-                .padding(.horizontal, 14)
-                .padding(.vertical, 8)
-                .background(
-                    Capsule()
-                        .fill(isSelected ? Color.white.opacity(0.4) : Color.white.opacity(0.12))
-                )
-                .overlay(
-                    Capsule()
-                        .stroke(isSelected ? Color.encipherNavy.opacity(0.4) : Color.black.opacity(0.1), lineWidth: 0.8)
-                )
-        }
-        .buttonStyle(.plain)
-        .accessibilityLabel(option.title)
-        .accessibilityAddTraits(isSelected ? [.isSelected] : [])
+        Text(option.shortTitle.uppercased())
+            .font(.system(size: 13, weight: .semibold))
+            .foregroundStyle(isSelected ? Color.encipherNavy : Color.black.opacity(0.75))
+            .padding(.horizontal, 14)
+            .padding(.vertical, 8)
+            .background(
+                RoundedRectangle(cornerRadius: cardCornerRadius, style: .continuous)
+                    .fill(isSelected ? Color.white.opacity(0.4) : Color.white.opacity(0.12))
+            )
+            .overlay(
+                RoundedRectangle(cornerRadius: cardCornerRadius, style: .continuous)
+                    .stroke(isSelected ? Color.encipherNavy.opacity(0.4) : Color.black.opacity(0.1), lineWidth: 0.8)
+            )
+            .onTapGesture { action(.select(option.id)) }
+            .accessibilityLabel(option.title)
+            .accessibilityAddTraits(isSelected ? [.isSelected] : [])
     }
 }
 
