@@ -46,6 +46,8 @@ internal enum Asset {
     internal static let notificationsPromptGraphic = ImageAsset(name: "images/notifications-prompt-graphic")
     internal static let pollWinner = ImageAsset(name: "images/poll-winner")
   }
+  internal static let encipherLogoText = ImageAsset(name: "encipher-logo-text")
+  internal static let encipherLogo = ImageAsset(name: "encipher-logo")
   internal static let slide1 = ImageAsset(name: "slide-1")
   internal static let slide2 = ImageAsset(name: "slide-2")
   internal static let slide3 = ImageAsset(name: "slide-3")

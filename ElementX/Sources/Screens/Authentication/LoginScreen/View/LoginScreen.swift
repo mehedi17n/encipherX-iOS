@@ -63,7 +63,7 @@ struct LoginScreen: View {
         Button(action: submit) {
             Text(L10n.actionContinue)
         }
-        .buttonStyle(EncipherLoginButtonStyle())
+        .buttonStyle(.encipherGradient)
         .disabled(!context.viewState.canSubmit)
         .accessibilityIdentifier(A11yIdentifiers.loginScreen.continue)
     }
@@ -144,17 +144,6 @@ struct LoginScreen: View {
 }
 
 // MARK: - Button Style
-
-private struct EncipherLoginButtonStyle: ButtonStyle {
-    func makeBody(configuration: Configuration) -> some View {
-        configuration.label
-            .frame(maxWidth: .infinity)
-            .padding(16)
-            .foregroundColor(.white)
-            .background(Color.encipherGreen.opacity(configuration.isPressed ? 0.9 : 1.0))
-            .cornerRadius(32)
-    }
-}
 
 // MARK: - Previews
 

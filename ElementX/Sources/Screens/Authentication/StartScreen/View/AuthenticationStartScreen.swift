@@ -125,8 +125,8 @@ struct AuthenticationStartScreen: View {
         case "id":
             return [
                 OnboardingSlideItem(imageAssetName: "slide-1",
-                                    title: "Bersama Encipher Anda",
-                                    subtitle: "Selamat datang di Encipher tercepat yang pernah ada.\nDisempurnakan untuk kecepatan dan kemudahan."),
+                                    title: "Amankan Suara Anda,\nMiliki Cerita Anda.",
+                                    subtitle: "Komunikasi rahasia dan pribadi, seaman percakapan personal di rumah."),
                 OnboardingSlideItem(imageAssetName: "slide-2",
                                     title: "Pribadi dan aman",
                                     subtitle: "Enkripsi End-to-end untuk menjaga percakapan Anda tetap aman."),
@@ -140,8 +140,8 @@ struct AuthenticationStartScreen: View {
         default: // "en"
             return [
                 OnboardingSlideItem(imageAssetName: "slide-1",
-                                    title: "Be in your Encipher",
-                                    subtitle: "Welcome to the fastest Encipher ever. Supercharged for speed and simplicity."),
+                                    title: "Secure Your Voice,\nOwn Your Story.",
+                                    subtitle: "Confidential and private communication, as secure as a personal conversation at home."),
                 OnboardingSlideItem(imageAssetName: "slide-2",
                                     title: "Private and secure",
                                     subtitle: "End‑to‑end encryption keeps your conversations safe."),
@@ -169,7 +169,7 @@ struct AuthenticationStartScreen: View {
             Button { context.send(viewAction: .login) } label: {
                 Text(context.viewState.loginButtonTitle)
             }
-            .buttonStyle(EncipherPrimaryButtonStyle())
+            .buttonStyle(.encipherGradient)
             .accessibilityIdentifier(A11yIdentifiers.authenticationStartScreen.signIn)
 
 //            if context.viewState.showCreateAccountButton {
@@ -197,19 +197,6 @@ struct AuthenticationStartScreen: View {
         // Let's not deal with snapshotting a changing version string.
         let shortVersionString = ProcessInfo.isRunningTests ? "0.0.0" : InfoPlistReader.main.bundleShortVersionString
         return Text(L10n.screenOnboardingAppVersion(shortVersionString))
-    }
-}
-
-// MARK: - Button Style
-
-private struct EncipherPrimaryButtonStyle: ButtonStyle {
-    func makeBody(configuration: Configuration) -> some View {
-        configuration.label
-            .frame(maxWidth: .infinity)
-            .padding(16)
-            .foregroundColor(.white)
-            .background(Color.encipherGreen.opacity(configuration.isPressed ? 0.9 : 1.0))
-            .cornerRadius(32)
     }
 }
 
@@ -312,36 +299,23 @@ private struct OnboardingCarouselView: View {
     }
 
     var body: some View {
-        VStack(spacing: 32) {
-            TabView(selection: $currentIndex) {
-                ForEach(items.indices, id: \.self) { index in
-                    Image(asset: ImageAsset(name: items[index].imageAssetName))
-                        .resizable()
-                        .scaledToFit()
+        TabView(selection: $currentIndex) {
+            ForEach(items.indices, id: \.self) { index in
+                if index == 0 {
+                    OnboardingSlide1FullView(title: items[index].title, subtitle: items[index].subtitle)
                         .tag(index)
-                        .clipShape(RoundedRectangle(cornerRadius: cornerRadius))
                         .contentShape(Rectangle())
                         .onTapGesture { toggleAutoScroll() }
-                        .padding(.horizontal, 4)
+                } else {
+                    OnboardingStandardSlideView(item: items[index], cornerRadius: cornerRadius)
+                        .tag(index)
+                        .contentShape(Rectangle())
+                        .onTapGesture { toggleAutoScroll() }
                 }
             }
-            .tabViewStyle(PageTabViewStyle(indexDisplayMode: .never))
-            .frame(maxWidth: .infinity)
-            .frame(height: 260)
-
-            VStack(spacing: 16) {
-                Text(items[currentIndex].title)
-                    .font(.compound.headingMDBold)
-                    .multilineTextAlignment(.center)
-                    .foregroundColor(.compound.textPrimary)
-                Text(items[currentIndex].subtitle)
-                    .font(.compound.bodyLG)
-                    .multilineTextAlignment(.center)
-                    .foregroundColor(.compound.textSecondary)
-            }
-            .padding(.horizontal, 16)
-            .padding(.top, 8)
         }
+        .tabViewStyle(PageTabViewStyle(indexDisplayMode: .never))
+        .frame(maxWidth: .infinity)
         .onAppear { startTimer() }
         .onDisappear { stopTimer() }
     }
@@ -371,6 +345,110 @@ private struct OnboardingCarouselView: View {
             stopTimer()
         } else {
             startTimer()
+        }
+    }
+}
+
+// MARK: - Onboarding Slide 1 (full custom layout)
+
+private struct OnboardingSlide1FullView: View {
+    let title: String
+    let subtitle: String
+
+    // Periwinkle ring color matching the design
+    private let ringColor = Color(red: 0.60, green: 0.60, blue: 0.78)
+
+    var body: some View {
+        GeometryReader { geo in
+            let W = geo.size.width
+            let outerDiameter = W * 0.86
+            let innerDiameter = outerDiameter * 0.63
+            let iconSize = innerDiameter * 0.54
+
+            VStack(spacing: 0) {
+                // Title
+                Text(title)
+                    .font(.compound.headingMDBold)
+                    .multilineTextAlignment(.center)
+                    .foregroundColor(.compound.textPrimary)
+                    .padding(.top, 12)
+                    .padding(.horizontal, 20)
+                    .fixedSize(horizontal: false, vertical: true)
+
+                Spacer()
+
+                // Concentric rings + encipher icon (no white card)
+                ZStack {
+                    Circle()
+                        .stroke(ringColor.opacity(0.22), lineWidth: 1.5)
+                        .frame(width: outerDiameter, height: outerDiameter)
+
+                    Circle()
+                        .stroke(ringColor.opacity(0.40), lineWidth: 1.5)
+                        .frame(width: innerDiameter, height: innerDiameter)
+
+                    Image(asset: Asset.encipherLogo)
+                        .resizable()
+                        .scaledToFit()
+                        .frame(width: iconSize)
+                }
+                .frame(height: outerDiameter)
+
+                // Encipher text logo — sized proportional to screen width
+                Image(asset: Asset.encipherLogoText)
+                    .resizable()
+                    .scaledToFit()
+                    .frame(width: W * 0.56)
+                    .padding(.top, 22)
+
+                Spacer()
+
+                // Subtitle
+                Text(subtitle)
+                    .font(.compound.bodyLG)
+                    .multilineTextAlignment(.center)
+                    .foregroundColor(.compound.textSecondary)
+                    .padding(.horizontal, 28)
+                    .padding(.bottom, 12)
+                    .fixedSize(horizontal: false, vertical: true)
+            }
+            .frame(width: W, height: geo.size.height)
+        }
+    }
+}
+
+// MARK: - Standard slide (slides 2-4)
+
+private struct OnboardingStandardSlideView: View {
+    let item: OnboardingSlideItem
+    let cornerRadius: CGFloat
+
+    var body: some View {
+        VStack(spacing: 0) {
+            Spacer()
+
+            Image(asset: ImageAsset(name: item.imageAssetName))
+                .resizable()
+                .scaledToFit()
+                .clipShape(RoundedRectangle(cornerRadius: cornerRadius))
+                .frame(maxWidth: .infinity)
+                .frame(height: 260)
+                .padding(.horizontal, 4)
+
+            VStack(spacing: 16) {
+                Text(item.title)
+                    .font(.compound.headingMDBold)
+                    .multilineTextAlignment(.center)
+                    .foregroundColor(.compound.textPrimary)
+                Text(item.subtitle)
+                    .font(.compound.bodyLG)
+                    .multilineTextAlignment(.center)
+                    .foregroundColor(.compound.textSecondary)
+            }
+            .padding(.horizontal, 16)
+            .padding(.top, 32)
+
+            Spacer()
         }
     }
 }
