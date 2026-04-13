@@ -128,8 +128,8 @@ struct AuthenticationStartScreen: View {
                                     title: "Amankan Suara Anda,\nMiliki Cerita Anda.",
                                     subtitle: "Komunikasi rahasia dan pribadi, seaman percakapan personal di rumah."),
                 OnboardingSlideItem(imageAssetName: "slide-2",
-                                    title: "Pribadi dan aman",
-                                    subtitle: "Enkripsi End-to-end untuk menjaga percakapan Anda tetap aman."),
+                                    title: "Anda yang Berkuasa",
+                                    subtitle: "Pilih di mana percakapan Anda disimpan, memberikan kontrol dan kemandirian."),
                 OnboardingSlideItem(imageAssetName: "slide-3",
                                     title: "Panggilan super jernih",
                                     subtitle: "Komunikasi Suara dan video berkualitas tinggi untuk tim Anda."),
@@ -143,8 +143,8 @@ struct AuthenticationStartScreen: View {
                                     title: "Secure Your Voice,\nOwn Your Story.",
                                     subtitle: "Confidential and private communication, as secure as a personal conversation at home."),
                 OnboardingSlideItem(imageAssetName: "slide-2",
-                                    title: "Private and secure",
-                                    subtitle: "End‑to‑end encryption keeps your conversations safe."),
+                                    title: "You're in Control",
+                                    subtitle: "Choose where your conversations are kept, giving you control and independence."),
                 OnboardingSlideItem(imageAssetName: "slide-3",
                                     title: "Crystal‑clear calls",
                                     subtitle: "High‑quality voice and video for your teams."),
@@ -306,6 +306,11 @@ private struct OnboardingCarouselView: View {
                         .tag(index)
                         .contentShape(Rectangle())
                         .onTapGesture { toggleAutoScroll() }
+                } else if index == 1 {
+                    OnboardingSlide2FullView(title: items[index].title, subtitle: items[index].subtitle)
+                        .tag(index)
+                        .contentShape(Rectangle())
+                        .onTapGesture { toggleAutoScroll() }
                 } else {
                     OnboardingStandardSlideView(item: items[index], cornerRadius: cornerRadius)
                         .tag(index)
@@ -413,6 +418,60 @@ private struct OnboardingSlide1FullView: View {
                     .fixedSize(horizontal: false, vertical: true)
             }
             .frame(width: W, height: geo.size.height)
+        }
+    }
+}
+
+// MARK: - Onboarding Slide 2 (You're in Control)
+
+private struct OnboardingSlide2FullView: View {
+    let title: String
+    let subtitle: String
+
+    var body: some View {
+        GeometryReader { geo in
+            let W = geo.size.width
+            let H = geo.size.height
+            let iconSize = W * 0.32
+
+            ZStack {
+                // Background overlay — scattered decorative rectangles
+                Image(asset: Asset.onboarding2BgOverlay)
+                    .resizable()
+                    .scaledToFill()
+                    .frame(width: W, height: H)
+                    .clipped()
+
+                // Content on top
+                VStack(spacing: 0) {
+                    Text(title)
+                        .font(.compound.headingMDBold)
+                        .multilineTextAlignment(.center)
+                        .foregroundColor(.compound.textPrimary)
+                        .padding(.top, 12)
+                        .padding(.horizontal, 20)
+                        .fixedSize(horizontal: false, vertical: true)
+
+                    Spacer()
+
+                    Image(asset: Asset.onboarding2)
+                        .resizable()
+                        .scaledToFit()
+                        .frame(width: iconSize, height: iconSize)
+
+                    Spacer()
+
+                    Text(subtitle)
+                        .font(.compound.bodyLG)
+                        .multilineTextAlignment(.center)
+                        .foregroundColor(.compound.textSecondary)
+                        .padding(.horizontal, 28)
+                        .padding(.bottom, 12)
+                        .fixedSize(horizontal: false, vertical: true)
+                }
+                .frame(width: W, height: H)
+            }
+            .frame(width: W, height: H)
         }
     }
 }
