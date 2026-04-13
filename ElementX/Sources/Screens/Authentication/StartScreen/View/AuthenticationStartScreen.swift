@@ -106,7 +106,6 @@ struct AuthenticationStartScreen: View {
             if verticalSizeClass == .regular {
                 Spacer()
                 OnboardingCarouselView(items: slides, currentIndex: $carouselIndex)
-                    .padding(.horizontal, 16)
                     .onAppear { carouselItemCount = slides.count }
             }
 
@@ -115,7 +114,6 @@ struct AuthenticationStartScreen: View {
             Spacer()
         }
         .padding(.bottom)
-        .padding(.horizontal, 16)
         .readableFrame()
     }
 
