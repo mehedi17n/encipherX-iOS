@@ -32,37 +32,39 @@ struct AuthenticationStartScreen: View {
             ZStack(alignment: .topLeading) {
                 mainContent(in: geometry)
 
-                if context.viewState.shouldShowLanguagePicker {
-                    OnboardingLanguagePicker(options: context.viewState.availableLanguages,
-                                             selectedCode: context.viewState.selectedLanguageCode,
-                                             isExpanded: $isLanguagePickerExpanded) { action in
-                        switch action {
-                        case .toggle:
-                            withAnimation(.spring(response: 0.4, dampingFraction: 0.8)) {
-                                isLanguagePickerExpanded.toggle()
-                            }
-                        case .select(let code):
-                            context.send(viewAction: .selectLanguage(code: code))
-                            withAnimation(.spring(response: 0.4, dampingFraction: 0.85)) {
-                                isLanguagePickerExpanded = false
+                HStack(alignment: .center) {
+                    if context.viewState.shouldShowLanguagePicker {
+                        OnboardingLanguagePicker(options: context.viewState.availableLanguages,
+                                                 selectedCode: context.viewState.selectedLanguageCode,
+                                                 isExpanded: $isLanguagePickerExpanded) { action in
+                            switch action {
+                            case .toggle:
+                                withAnimation(.spring(response: 0.4, dampingFraction: 0.8)) {
+                                    isLanguagePickerExpanded.toggle()
+                                }
+                            case .select(let code):
+                                context.send(viewAction: .selectLanguage(code: code))
+                                withAnimation(.spring(response: 0.4, dampingFraction: 0.85)) {
+                                    isLanguagePickerExpanded = false
+                                }
                             }
                         }
+                        .accessibilityLabel(context.viewState.selectedLanguageTitle ?? "Language")
                     }
-                    .padding(.leading, 16)
-                    .accessibilityLabel(context.viewState.selectedLanguageTitle ?? "Language")
-                }
 
-                HStack(spacing: 6) {
-                    ForEach(0..<carouselItemCount, id: \.self) { index in
-                        RoundedRectangle(cornerRadius: 2)
-                            .fill(index == carouselIndex ? Color.encipherNavy : Color.encipherNavy.opacity(0.25))
-                            .frame(width: index == carouselIndex ? 48 : 36, height: 3)
-                            .animation(.easeInOut(duration: 0.3), value: carouselIndex)
+                    Spacer()
+
+                    HStack(spacing: 6) {
+                        ForEach(0..<carouselItemCount, id: \.self) { index in
+                            RoundedRectangle(cornerRadius: 2)
+                                .fill(index == carouselIndex ? Color.encipherNavy : Color.encipherNavy.opacity(0.25))
+                                .frame(width: index == carouselIndex ? 48 : 36, height: 3)
+                                .animation(.easeInOut(duration: 0.3), value: carouselIndex)
+                        }
                     }
                 }
-                .frame(maxWidth: .infinity, alignment: .trailing)
-                .padding(.trailing, 16)
-                .padding(.top, 22)
+                .padding(.horizontal, 16)
+                .padding(.top, 12)
             }
             .frame(maxWidth: .infinity, maxHeight: .infinity)
         }
