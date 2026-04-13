@@ -237,14 +237,14 @@ private struct OnboardingLanguagePicker: View {
             .font(.system(size: 13, weight: .semibold))
             .foregroundStyle(isSelected ? Color.encipherNavy : Color.black.opacity(0.75))
             .padding(.horizontal, 14)
-            .padding(.vertical, 8)
+            .padding(.vertical, 7)
             .background(
                 RoundedRectangle(cornerRadius: cardCornerRadius, style: .continuous)
                     .fill(isSelected ? Color.white.opacity(0.4) : Color.white.opacity(0.12))
             )
             .overlay(
                 RoundedRectangle(cornerRadius: cardCornerRadius, style: .continuous)
-                    .stroke(isSelected ? Color.encipherNavy.opacity(0.4) : Color.black.opacity(0.1), lineWidth: 0.8)
+                    .stroke(isSelected ? Color.encipherNavy : Color.black.opacity(0.1), lineWidth: 1.5)
             )
             .onTapGesture { action(.select(option.id)) }
             .accessibilityLabel(option.title)
