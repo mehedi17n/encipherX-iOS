@@ -13,6 +13,7 @@ import SwiftUI
 
 private extension Color {
     static let encipherGreen = Color(red: 0.039, green: 0.529, blue: 0.255)
+    static let encipherNavy = Color(red: 0, green: 0, blue: 0.533) // #000088
 }
 
 // MARK: - Screen
@@ -54,8 +55,8 @@ struct AuthenticationStartScreen: View {
                 HStack(spacing: 6) {
                     ForEach(0..<carouselItemCount, id: \.self) { index in
                         RoundedRectangle(cornerRadius: 2)
-                            .fill(index == carouselIndex ? Color.encipherGreen : Color.encipherGreen.opacity(0.25))
-                            .frame(width: index == carouselIndex ? 28 : 18, height: 3)
+                            .fill(index == carouselIndex ? Color.encipherNavy : Color.encipherNavy.opacity(0.25))
+                            .frame(width: index == carouselIndex ? 48 : 36, height: 3)
                             .animation(.easeInOut(duration: 0.3), value: carouselIndex)
                     }
                 }
@@ -131,9 +132,9 @@ struct AuthenticationStartScreen: View {
                 OnboardingSlideItem(imageAssetName: "slide-3",
                                     title: "Pesan yang Aman",
                                     subtitle: "Terenkripsi end-to-end, tanpa nomor telepon. Tanpa iklan atau penambangan data."),
-                OnboardingSlideItem(imageAssetName: "slide-4",
-                                    title: "Dibangun untuk kecepatan",
-                                    subtitle: "Cepat, andal, dan mudah digunakan setiap hari.")
+                // OnboardingSlideItem(imageAssetName: "slide-4",
+                //                     title: "Dibangun untuk kecepatan",
+                //                     subtitle: "Cepat, andal, dan mudah digunakan setiap hari.")
             ]
         default: // "en"
             return [
@@ -146,9 +147,9 @@ struct AuthenticationStartScreen: View {
                 OnboardingSlideItem(imageAssetName: "slide-3",
                                     title: "Secure Messaging",
                                     subtitle: "End-to-end Encrypted and no phone number required. No Ads or data mining."),
-                OnboardingSlideItem(imageAssetName: "slide-4",
-                                    title: "Built for speed",
-                                    subtitle: "Fast, reliable, and simple to use every day.")
+                // OnboardingSlideItem(imageAssetName: "slide-4",
+                //                     title: "Built for speed",
+                //                     subtitle: "Fast, reliable, and simple to use every day.")
             ]
         }
     }
