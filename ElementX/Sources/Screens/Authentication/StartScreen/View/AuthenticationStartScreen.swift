@@ -129,8 +129,8 @@ struct AuthenticationStartScreen: View {
                                     title: "Anda yang Berkuasa",
                                     subtitle: "Pilih di mana percakapan Anda disimpan, memberikan kontrol dan kemandirian."),
                 OnboardingSlideItem(imageAssetName: "slide-3",
-                                    title: "Panggilan super jernih",
-                                    subtitle: "Komunikasi Suara dan video berkualitas tinggi untuk tim Anda."),
+                                    title: "Pesan yang Aman",
+                                    subtitle: "Terenkripsi end-to-end, tanpa nomor telepon. Tanpa iklan atau penambangan data."),
                 OnboardingSlideItem(imageAssetName: "slide-4",
                                     title: "Dibangun untuk kecepatan",
                                     subtitle: "Cepat, andal, dan mudah digunakan setiap hari.")
@@ -144,8 +144,8 @@ struct AuthenticationStartScreen: View {
                                     title: "You're in Control",
                                     subtitle: "Choose where your conversations are kept, giving you control and independence."),
                 OnboardingSlideItem(imageAssetName: "slide-3",
-                                    title: "Crystal‑clear calls",
-                                    subtitle: "High‑quality voice and video for your teams."),
+                                    title: "Secure Messaging",
+                                    subtitle: "End-to-end Encrypted and no phone number required. No Ads or data mining."),
                 OnboardingSlideItem(imageAssetName: "slide-4",
                                     title: "Built for speed",
                                     subtitle: "Fast, reliable, and simple to use every day.")
@@ -309,6 +309,11 @@ private struct OnboardingCarouselView: View {
                         .tag(index)
                         .contentShape(Rectangle())
                         .onTapGesture { toggleAutoScroll() }
+                } else if index == 2 {
+                    OnboardingSlide3FullView(title: items[index].title, subtitle: items[index].subtitle)
+                        .tag(index)
+                        .contentShape(Rectangle())
+                        .onTapGesture { toggleAutoScroll() }
                 } else {
                     OnboardingStandardSlideView(item: items[index], cornerRadius: cornerRadius)
                         .tag(index)
@@ -456,6 +461,61 @@ private struct OnboardingSlide2FullView: View {
                         .resizable()
                         .scaledToFit()
                         .frame(width: iconSize, height: iconSize)
+
+                    Spacer()
+
+                    Text(subtitle)
+                        .font(.compound.bodyLG)
+                        .multilineTextAlignment(.center)
+                        .foregroundColor(.compound.textSecondary)
+                        .padding(.horizontal, 28)
+                        .padding(.bottom, 12)
+                        .fixedSize(horizontal: false, vertical: true)
+                }
+                .frame(width: W, height: H)
+            }
+            .frame(width: W, height: H)
+        }
+    }
+}
+
+// MARK: - Onboarding Slide 3 (Secure Messaging)
+
+private struct OnboardingSlide3FullView: View {
+    let title: String
+    let subtitle: String
+
+    var body: some View {
+        GeometryReader { geo in
+            let W = geo.size.width
+            let H = geo.size.height
+            // onboarding3.svg viewBox is 100×110 → aspect ~0.91
+            let iconSize = W * 0.32
+
+            ZStack {
+                // Background overlay — scattered shield shapes
+                Image(asset: Asset.onboarding3BgOverlay)
+                    .resizable()
+                    .scaledToFill()
+                    .frame(width: W, height: H)
+                    .clipped()
+
+                // Content on top
+                VStack(spacing: 0) {
+                    Text(title)
+                        .font(.compound.headingMDBold)
+                        .multilineTextAlignment(.center)
+                        .foregroundColor(.compound.textPrimary)
+                        .padding(.top, 12)
+                        .padding(.horizontal, 20)
+                        .fixedSize(horizontal: false, vertical: true)
+
+                    Spacer()
+
+                    Image(asset: Asset.onboarding3)
+                        .resizable()
+                        .scaledToFit()
+                        .frame(width: iconSize)
 
                     Spacer()
 

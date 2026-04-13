@@ -50,6 +50,8 @@ internal enum Asset {
   internal static let encipherLogo = ImageAsset(name: "encipher-logo")
   internal static let onboarding2BgOverlay = ImageAsset(name: "onboarding2-bg-overlay")
   internal static let onboarding2 = ImageAsset(name: "onboarding2")
+  internal static let onboarding3BgOverlay = ImageAsset(name: "onboarding3-bg-overlay")
+  internal static let onboarding3 = ImageAsset(name: "onboarding3")
   internal static let slide1 = ImageAsset(name: "slide-1")
   internal static let slide2 = ImageAsset(name: "slide-2")
   internal static let slide3 = ImageAsset(name: "slide-3")
